@@ -1,0 +1,20 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-09 15:28:11
+ * @ Description: 타이포그라피 그라디언트
+ */
+
+// Gradient top to bottom
+@mixin gradient-top-bottom($topColor, $bottomColor) {
+    background: $topColor;
+    background: linear-gradient(to bottom, $topColor 0%,$bottomColor 100%);
+}
+
+
+@mixin color_gradient_light {
+    @include gradient-top-bottom( rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+@mixin color_gradient_dark {
+    @include gradient-top-bottom(rgba(0,0,0,0.4), rgba(0,0,0,0));
+}

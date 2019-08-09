@@ -10,9 +10,14 @@
 @import './base/reset';
 
 // Style
+@import './style/icomoon';
 @import './style/typography';
 @import './style/typography-color';
+@import './style/gradient';
 @import './style/mixin';
+
+// Components
+@import './components/navigation';
 
 // Page
 @import './pages/home';
