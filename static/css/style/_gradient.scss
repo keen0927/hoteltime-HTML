@@ -10,7 +10,6 @@
     background: linear-gradient(to bottom, $topColor 0%,$bottomColor 100%);
 }
 
-
 @mixin color_gradient_light {
     @include gradient-top-bottom( rgba(255,255,255,0), rgba(255,255,255,1));
 }

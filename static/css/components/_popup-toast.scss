@@ -1,0 +1,37 @@
+$duration: 0.3s;
+
+.popup-toast {
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    right: 40px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 32px 0;
+    padding: 0 0 safe(constant, bottom, 32px) 0;
+    padding: 0 0 safe(env, bottom, 32px) 0;
+    opacity: 0;
+    transition: $duration;
+
+    &.popup-toast__bottom-space {
+        bottom: 48px;
+    }
+
+    &.show {
+        opacity: 1;
+    }
+
+    div {
+        border-radius: 4px;
+        padding: 9px 20px 8px 20px;
+        background: $color_toast;
+        color: $color_text_light_primary;
+        word-break: keep-all;
+        line-height: 1.3;
+        text-align: center;
+        @include font_etc_1b;
+    }
+}
+
