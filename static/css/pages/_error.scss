@@ -1,0 +1,57 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-13 13:31:55
+ * @ Description: 에러페이지 SCSS
+ */
+
+.error-wrap {
+    min-width: 320px;
+    padding: 64px 40px 0 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -64px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    word-break: keep-all;
+
+    img {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+        background: rgba(0,0,0,0.1);
+    }
+
+    strong {
+        display: block;
+        margin-bottom: 8px;
+        color: $color_text_dark_primary;
+        @include font_hero_1b;
+    }
+
+    .error-sub-title {
+        padding-bottom: 6px;
+        color: $color_text_dark_secondary;
+        @include font-body_1r_leading;
+    }
+
+    .error-sub-info {
+        padding: 6px 0;
+        color: $color_text_blueb_tertiary;
+        @include font_title_2b;
+    }
+
+    .error-button-default {
+        display: inline-block;
+        height: 40px;
+        margin-top: 24px;
+        padding: 0 20px;
+        border-radius: 4px;
+        background: $color_action_blueb_primary;
+        line-height: 40px;
+        color: $color_text_light_primary;
+        vertical-align: top;
+        @include font_action_primary;
+    }
+}
