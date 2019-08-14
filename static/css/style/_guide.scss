@@ -1,0 +1,30 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-14 09:52:02
+ * @ Description: 가이드용 스타일
+ */
+
+$h2-color: rgba(0,0,0,0.87);
+
+.guide-wrap {
+    max-width: 720px;
+    margin: 30px auto 0 auto;
+}
+
+.guide-h2 {
+    margin-bottom: 30px;
+    padding: 0 16px 10px 16px;
+    border-bottom: 1px solid $h2-color;
+    font-family: 'Arial';
+    font-size: 30px;
+    font-weight: 800;
+    color: $h2-color;
+}
+
+.guide-h3 {
+    padding: 0 16px 10px 16px;
+    font-family: 'Arial';
+    font-size: 16px;
+    color: $h2-color;
+}
+

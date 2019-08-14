@@ -14,9 +14,12 @@
 @import './style/typography';
 @import './style/typography-color';
 @import './style/gradient';
+@import './style/function';
 @import './style/mixin';
+@import './style/guide';
 
 // Components
+@import './components/button';
 @import './components/navigation';
 @import './components/input-field';
 @import './components/popup-toast';

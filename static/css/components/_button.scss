@@ -1,0 +1,73 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-14 09:48:11
+ * @ Description: Button 스타일
+ * @ zpl://screen?pid=5d1d633794d7ed78bcacd6f8&sid=5d1d7ea833252215440ec45f
+ */
+
+@mixin button-shadow {
+    box-shadow: 0 2px 16px $color_shadow_secondary;
+}
+
+@mixin button-default {
+    display: inline-block;
+    height: 48px;
+    border-radius: 4px;
+    line-height: 48px;
+    @include font_action_primary;
+
+    &:disabled {
+        background-color: $color_action_blueb_disabled;
+        color: $color_text_dark_disabled;
+        cursor: not-allowed;
+        box-shadow: none !important;
+    }
+}
+
+.button-wrap__full {
+    padding: 0 20px 20px;
+    text-align: center;
+
+    .btn {
+        width: 100%;
+        @include button-default;
+    }
+}
+
+.button-wrap__half {
+    display: flex;
+    padding: 0 20px 20px;
+
+    a,button {
+        flex: 1;
+        @include button-default;
+    }
+    span {
+        width: 8px;
+    }
+}
+
+.button-wrap__float {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    padding-bottom: 20px;
+    padding-bottom: safe(constant, bottom, 14px);
+    padding-bottom: safe(env, bottom, 14px);
+
+    button {
+        @include button-shadow;
+    }
+}
+
+.btn-primary {
+    background-color: $color_action_blueb_primary;
+    color: $color_text_light_primary;
+}
+
+.btn-secondary {
+    background-color: $color_action_grey_primary;
+    color: $color_text_dark_primary;
+}
