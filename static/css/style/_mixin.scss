@@ -3,3 +3,19 @@
  * @ Create Time: 2019-07-31 16:31:02
  * @ Description: Mixin
  */
+
+@mixin word-ellipsis-line1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin word-ellipsis-line2 {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: keep-all;
+    box-orient: vertical;
+}

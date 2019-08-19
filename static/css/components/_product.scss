@@ -1,0 +1,115 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-16 09:53:53
+ * @ Description: 제휴점 리스트
+ * zpl://screen?pid=5d1d633794d7ed78bcacd6f8&sid=5d3027970335ea8e378331e7
+ */
+
+.product-panorama-wrap {
+    opacity: 0;
+    transition: 0.4s;
+
+    &.show {
+        opacity: 1;
+    }
+}
+.product-panorama {
+    padding: 0 20px 20px;
+
+    figure {
+        overflow: hidden;
+        border-radius: 4px;
+        width: 100%;
+        height: 50px;
+        margin-bottom: 8px;
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.product-title-area {
+    position: relative;
+    padding: 0 2px 10px 2px;
+
+    &.product-is-zzim {
+        padding-right: 52px;
+    }
+
+    .product-zzim {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        background: rgba(0,0,0,0.48);
+    }
+}
+
+@mixin product-badge-category {
+    display: inline-block;
+    margin: 2px 0;
+    padding: 0 3px;
+    height: 15px;
+    line-height: 16px;
+    color: $color_text_light_primary;
+    @include font_badge_1;
+}
+
+.product-badge-category__primary {
+    background-color: $color_blueb_primary;
+    @include product-badge-category;
+}
+
+.product-badge-category__secondary {
+    background-color: $color_blueb_tertiary;
+    @include product-badge-category;
+}
+
+.product-title {
+    padding: 4px 0 1px 0;
+    color: $color_text_dark_primary;
+    word-break: keep-all;
+    @include font_product_title1;
+    @include word-ellipsis-line2;
+}
+
+.product-info {
+    padding-top: 3px;
+    color: $color_text_dark_primary;
+    @include word-ellipsis-line1;
+    @include font_product_subtitle;
+}
+
+.product-price-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div:nth-of-type(2) {
+        color: $color_text_dark_tertiary;
+        @include font_product_caption1;
+    }
+}
+
+.product-price-caption {
+    display: inline-block;
+    padding-right: 4px;
+    color: $color_gold_secondary;
+    @include font_product_caption1;
+}
+
+.product-price-sale {
+    color: color_text_dark_primary;
+    @include font_product_price1;
+}
+
+.product-price-default {
+    color: $color_text_dark_tertiary;
+    text-decoration: line-through;
+    @include font_product_subtitle;
+}
+
+.product-price-day {
+    color: $color_text_dark_tertiary;
+    @include font_product_caption1;
+}
