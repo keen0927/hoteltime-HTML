@@ -17,6 +17,7 @@
     padding: 0 20px 20px;
 
     figure {
+        position: relative;
         overflow: hidden;
         border-radius: 4px;
         width: 100%;
@@ -25,23 +26,48 @@
         background-size: cover;
         background-position: center;
     }
+
+    .product-360 {
+        display: inline-block;
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 22px;
+        background: #fff;
+        font-size: 10px;
+    }
 }
+
+
 
 .product-title-area {
     position: relative;
     padding: 0 2px 10px 2px;
 
-    &.product-is-zzim {
+    &.product-is-favorite {
         padding-right: 52px;
     }
 
-    .product-zzim {
+    .product-favorite {
         position: absolute;
         top: 0;
         right: 0;
         width: 32px;
         height: 32px;
-        background: rgba(0,0,0,0.48);
+
+        i {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            font-size: 32px;
+        }
+    }
+
+    .product-favorite__active {
+        .ic_nav_fav:before {
+            content: "\e902";
+        }
     }
 }
 
@@ -84,10 +110,47 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 3px 2px 0 2px;
 
-    div:nth-of-type(2) {
+    .product-price-info__right {
         color: $color_text_dark_tertiary;
         @include font_product_caption1;
+    }
+}
+
+.product-additional-info {
+    display: flex;
+    margin-top: 8px;
+    padding: 7px;
+    background-color: $color_bg_tertiary;
+
+    div:nth-of-type(1) {
+        position: relative;
+        padding-left: 3px;
+        padding-right: 8px;
+        color: $color_text_blueb_secondary;
+        @include font_product_caption2;
+
+        &:after {
+            display: inline-block;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 10px;
+            height: 10px;
+            border: 5px solid transparent;
+            border-top: 5px solid $color_gold_primary;
+
+        }
+    }
+
+    div:nth-of-type(2) {
+        flex: 1;
+        color: $color_text_dark_secondary;
+        @include font_product_caption3;
+        @include word-ellipsis-line2;
     }
 }
 
@@ -112,4 +175,24 @@
 .product-price-day {
     color: $color_text_dark_tertiary;
     @include font_product_caption1;
+}
+
+// 320px 대응
+@media all and (max-width:320px) {
+
+    .product-price-area {
+        display: block;
+        position: relative;
+    }
+
+    .product-price-info__left {
+        padding-top: 18px;
+    }
+
+    .product-price-info__right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right;
+    }
 }

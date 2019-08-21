@@ -21,44 +21,131 @@
         <ul class="product-panorama-wrap">
 
             <li class="product-panorama">
-                <figure class="product-panorama-image" style="background-image:url('https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg')"><button type="button">360뷰 확인</button></figure>
+                <figure class="product-panorama-image" style="background-image:url('https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg')"><button type="button" class="product-360">360뷰 확인</button></figure>
 
-                <!-- 찜버튼이 있으면 product-is-zzim 클래스 존재 -->
-                <div class="product-title-area product-is-zzim ">
-                    <span class="product-badge-category__primary">호텔</span>
+                <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재(텍스트 영역 컨트롤용) -->
+                <div class="product-title-area product-is-favorite">
+                    <span class="product-badge-category__secondary">호텔</span>
                     <p class="product-title">Product Title(제휴점명)</p>
                     <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
-                    <button type="button" class="product-zzim">찜</button>
+                    <!-- 찜 on 클래스 : product-favorite__active -->
+                    <button type="button" class="product-favorite product-favorite__active"><i class="ic_nav_fav"></i></button>
                 </div>
 
                 <div class="product-price-area">
-                    <div>
+                    <div class="product-price-info__left">
                         <span class="product-price-caption">할인사유</span>
                         <span class="product-price-sale">000,000원</span>
                         <span class="product-price-default">000,000</span>
                         <span class="product-price-day">/박</span>
                     </div>
-                    <div>
+                    <div class="product-price-info__right">
                         실시간 정보
+                    </div>
+                </div>
+
+                <div class="product-additional-info">
+                    <div>TITLE</div>
+                    <div>
+                        Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능  표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
                     </div>
                 </div>
             </li>
 
             <li class="product-panorama">
-                <figure class="product-panorama-image" style="background-image:url('https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg')"></figure>
+                <figure class="product-panorama-image" style="background-image:url('https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg')"><button type="button" class="product-360">360뷰 확인</button></figure>
+
+                <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
                 <div class="product-title-area">
-                    <span class="product-badge-category__secondary">CATEGORY</span>
-                    <p class="product-title" class="product-zzim">Product Title(제휴점명) - 영역보다 길면 단어 단위로 줄바꿈 최대 2줄까지 표현이 가능합니다. 테스트 줄바꿈 말줄임</p>
-                    <p class="product-info">Product Subtitle | 제휴점</p>
+                    <span class="product-badge-category__primary">호텔</span>
+                    <p class="product-title">Product Title(제휴점명)</p>
+                    <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                </div>
+
+                <div class="product-price-area">
+                    <div class="product-price-info__left">
+                        <span class="product-price-caption">할인사유</span>
+                        <span class="product-price-sale">000,000원</span>
+                        <span class="product-price-default">000,000</span>
+                        <span class="product-price-day">/박</span>
+                    </div>
+                    <div class="product-price-info__right">
+                        실시간 정보
+                    </div>
+                </div>
+
+                <div class="product-additional-info">
+                    <div>TITLE</div>
+                    <div>
+                        Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능  표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
+                    </div>
                 </div>
             </li>
 
+            <li class="product-panorama">
+                <figure class="product-panorama-image" style="background-image:url('https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg')"><button type="button" class="product-360">360뷰 확인</button></figure>
+
+                <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                <div class="product-title-area">
+                    <span class="product-badge-category__primary">호텔</span>
+                    <p class="product-title">Product Title(제휴점명)</p>
+                    <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                </div>
+
+                <div class="product-price-area">
+                    <div class="product-price-info__left">
+                        <span class="product-price-caption">할인사유</span>
+                        <span class="product-price-sale">000,000원</span>
+                        <span class="product-price-default">000,000</span>
+                        <span class="product-price-day">/박</span>
+                    </div>
+                    <div class="product-price-info__right">
+                        실시간 정보
+                    </div>
+                </div>
+
+                <div class="product-additional-info">
+                    <div>TITLE</div>
+                    <div>
+                        Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능  표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
+                    </div>
+                </div>
+            </li>
+
+            <li class="product-panorama">
+                <figure class="product-panorama-image" style="background-image:url('https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg')"><button type="button" class="product-360">360뷰 확인</button></figure>
+
+                <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                <div class="product-title-area">
+                    <span class="product-badge-category__primary">호텔</span>
+                    <p class="product-title">Product Title(제휴점명)</p>
+                    <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                </div>
+
+                <div class="product-price-area">
+                    <div class="product-price-info__left">
+                        <span class="product-price-caption">할인사유</span>
+                        <span class="product-price-sale">000,000원</span>
+                        <span class="product-price-default">000,000</span>
+                        <span class="product-price-day">/박</span>
+                    </div>
+                    <div class="product-price-info__right">
+                        실시간 정보
+                    </div>
+                </div>
+
+                <div class="product-additional-info">
+                    <div>TITLE</div>
+                    <div>
+                        Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능  표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
+                    </div>
+                </div>
+            </li>
         </ul>
-
-
     </div>
 
     <!-- Script -->
+    <script src="../static/js/library/jquery-1.12.4.min.js"></script>
     <script src="../static/js/service/components/product.js"></script>
 
 </body>
