@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ko">
+<head>
+		<meta charset="UTF-8">
+		<meta name="apple-touch-fullscreen" content="YES" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+		<meta name = "format-detection" content ="telephone=no"/>
+		<title></title>
+		<link rel="stylesheet" href="../static/css/all.css">
+</head>
+<body style="height: 5000px;">
+
+	<div class="guide-wrap">
+
+		<h2 class="guide-h2">Control Elements</h2>
+		
+		<h3 class="guide-h3">Chackbox</h3>
+
+		<!--Single  Chackbox -->
+		<label for="checkbox" class="checkbox-item">
+			<span class="checkbox-item-input">
+				<input type="checkbox" id="checkbox" name="checkboxComponentSingle" class="checkbox-input" />
+				<span class="checkbox-item-inner icon-ic_check"></span>
+			</span>
+			<span class="checkbox-item-text">check on</span>
+		</label>
+
+		<br />
+
+		<!-- Group Checkbox -->
+		<div class="checkbox-item-group">
+			<label for="checkbox0" class="checkbox-item">
+				<span class="checkbox-item-input">
+					<input type="checkbox" id="checkbox0" name="checkboxComponent" class="checkbox-input" />
+					<span class="checkbox-item-inner icon-ic_check"></span>
+				</span>
+				<span class="checkbox-item-text">check on</span>
+			</label>
+			<label for="checkbox2" class="checkbox-item">
+				<span class="checkbox-item-input">
+					<input type="checkbox" id="checkbox2" name="checkboxComponent" class="checkbox-input" />
+					<span class="checkbox-item-inner"></span>
+				</span>
+				<span class="checkbox-item-text">check off</span>
+			</label>
+		</div>
+		<br />
+		<h3 class="guide-h3">Radio Button</h3>
+
+		<!-- Single Radio Button -->
+		<label for="radio" class="radio-item">
+			<span class="radio-item-input">
+				<input type="radio" id="radio" name="radioComponentSingle" class="radio-input" />
+				<span class="radio-item-inner"></span>
+			</span>
+			<span class="radio-item-text">radio off</span>
+		</label>
+		<br />
+		<!-- Group Radio Button -->
+		<div class="radio-item-group">
+			<label for="radio0" class="radio-item">
+				<span class="radio-item-input">
+					<input type="radio" id="radio0" name="radioComponent" class="radio-input" />
+					<span class="radio-item-inner"></span>
+				</span>
+				<span class="radio-item-text">radio off</span>
+			</label>
+			<br>
+			<label for="radio1" class="radio-item">
+				<span class="radio-item-input">
+					<input type="radio" id="radio1" name="radioComponent" class="radio-input" /><span
+						class="radio-item-inner"></span>
+				</span>
+				<span class="radio-item-text">radio on</span>
+			</label>
+		</div>
+		<br /><br /><br />
+		<h3 class="guide-h3">Toggle Switch</h3>
+
+		<!-- switch  -->
+		<div class="switch-item-group">
+			<label class="switch-item">
+				<input type="checkbox" class="switch-input">
+				<span class="switch-text"></span>
+				<!-- <span class="switch-text" data-switch-off="off" data-switch-on="on" data-switch="on">ddd</span> -->
+				<span class="switch-handle"></span>
+			</label>
+
+			<label class="switch-item">
+				<input type="checkbox" class="switch-input">
+				<span class="switch-text"></span>
+				<!-- <span class="switch-text" data-switch-off="off" data-switch-on="on" data-switch="on">ddd</span> -->
+				<span class="switch-handle"></span>
+			</label>
+		</div>
+
+		<div class="button-wrap__half button-wrap__float">
+			<button type="button" class="btn btn-primary">Action</button>
+			<span>&nbsp;</span>
+			<button type="button" class="btn btn-secondary" disabled>Action</button>
+		</div>
+	</div>
+<script>
+
+//  switch value 
+var switchAll = document.querySelectorAll('input[class="switch-input"]');
+for (var i=0; i<switchAll.length; i++){
+	switchAll[i].addEventListener('change',function(e){
+		var switchThisVal = this.checked;
+		console.log(switchThisVal)
+		return switchThisVal;
+	})
+}
+
+
+
+</script>
+</body>
+</html>
