@@ -4,7 +4,69 @@
  * @ Description: 자주묻는질문
  */
 
+$animation-duration-open: 0.25s;
+$animation-duration-close: 0.35s;
 
 .faq-wrap {
+    padding: 56px 0 20px 0;
+    padding: 56px 0 safe(constant, bottom, 20px) 0;
+    padding: 56px 0 safe(env, bottom, 20px) 0;
+}
 
+.faq-item-title {
+    display: block;
+    position: relative;
+    padding: 20px 60px 19px 20px;
+    color: $color_text_dark_primary;
+    @include font_title_1r;
+
+    strong {
+        display: block;
+    }
+    i {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: $color_action_blueb_tertiary;
+        transition: 0.4s;
+    }
+
+    &.faq-item-title__on {
+
+        i {
+            transform: rotate(180deg) translateY(10px);
+        }
+    }
+}
+
+.faq-item-content {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    background-color: $color_bg_secondary;
+    color: $color_text_dark_primary;
+    word-break: keep-all;
+    transition: max-height $animation-duration-open ease-out;
+    @include font_body_1r_leading;
+
+    div {
+        padding: 24px 20px 28px 20px;
+    }
+
+    time {
+        display: block;
+        padding-top: 24px;
+        color: $color_text_dark_tertiary;
+        @include font_etc_1r;
+    }
+
+    &.faq-item-content__on {
+        max-height: 500px;
+        transition: max-height $animation-duration-close ease-in;
+    }
 }
