@@ -8,9 +8,7 @@ $animation-duration-open: 0.25s;
 $animation-duration-close: 0.35s;
 
 .faq-wrap {
-    padding: 56px 0 20px 0;
-    padding: 56px 0 safe(constant, bottom, 20px) 0;
-    padding: 56px 0 safe(env, bottom, 20px) 0;
+    @include defaultContentLayout;
 }
 
 .faq-item-title {

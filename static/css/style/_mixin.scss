@@ -4,12 +4,14 @@
  * @ Description: Mixin
  */
 
+// 말줄임 1줄
 @mixin word-ellipsis-line1 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
+// 말줄임 2줄
 @mixin word-ellipsis-line2 {
     overflow: hidden;
     display: -webkit-box;
@@ -18,4 +20,11 @@
     -webkit-box-orient: vertical;
     word-break: keep-all;
     box-orient: vertical;
+}
+
+// 기본 wrap 레이아웃
+@mixin defaultContentLayout{
+    padding: 56px 0 20px 0;
+    padding: 56px 0 safe(constant, bottom, 20px) 0;
+    padding: 56px 0 safe(env, bottom, 20px) 0;
 }
