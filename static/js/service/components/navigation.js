@@ -64,5 +64,5 @@ var navigation = (function(){
     }
 })();
 
-navigation.init('light');
+// navigation.init('light');
 // navigation.init('dark');
