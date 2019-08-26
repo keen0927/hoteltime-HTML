@@ -1,0 +1,72 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-26
+ * @ Description: 공지사항
+ * @ zpl://screen?pid=5d1d633794d7ed78bcacd6f8&sid=5d1d9c63573c86422fad893e
+ */
+
+.notice-wrap {
+    @include defaultContentLayout;
+}
+
+.notice-item {
+    padding: 20px 20px 19px 20px;
+
+    span {
+        display: block;
+        padding-bottom: 4px;
+        color: $color_text_blueb_tertiary;
+        @include font_etc_1b;
+    }
+
+    strong {
+        display: block;
+        color: $color_text_dark_primary;
+        word-break: keep-all;
+        @include font_title_1r;
+    }
+
+    time {
+        color: $color_text_dark_tertiary;
+        padding-top: 5px;
+        @include font_etc_1r;
+    }
+}
+
+.notice-view-wrap {
+    @include defaultContentLayout;
+}
+
+.notice-view-title {
+    padding: 20px 0;
+    margin: 0 20px;
+    border-bottom: 1px solid $color_divider_dark;
+
+    span {
+        display: block;
+        padding-bottom: 4px;
+        color: $color_text_blueb_tertiary;
+        @include font_etc_1b;
+    }
+
+    strong {
+        display: block;
+        color: $color_text_dark_primary;
+        word-break: keep-all;
+        @include font_page_title;
+    }
+
+    time {
+        display: block;
+        padding-top: 5px;
+        color: $color_text_dark_tertiary;
+        @include font_etc_1r;
+    }
+}
+
+.notice-view-content {
+    padding: 20px;
+    color: $color_text_dark_primary;
+    word-break: keep-all;
+    @include font_body_1r_leading;
+}
