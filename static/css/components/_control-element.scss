@@ -1,0 +1,215 @@
+/**
+ * @ Author: Niki
+ * @ Create Time: 
+ * @ Description: Control Elements 스타일
+ * @ zpl://screen?pid=5d1d633794d7ed78bcacd6f8&sid=5d1d83a5d011df146672f12a
+ */
+
+/* checkbox */
+input[type='checkbox']{
+    display: inline-block;
+    box-sizing:border-box;
+    padding:0;
+    background:none;
+}
+.checkbox-item-group {
+    display: flex;
+}
+.checkbox-item-input {
+    position:relative;
+    display:inline-block;
+    vertical-align:top
+}
+.checkbox-item-input input[type='checkbox'] {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:1;
+    cursor:pointer;
+    opacity:0;
+    vertical-align:top
+}
+.checkbox-item-inner {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: solid 1px $color_action_blueb_tertiary;
+    border-radius: 2px;
+}
+
+.checkbox-item-input input[type='checkbox']:checked + .checkbox-item-inner {
+    background-color: $color_action_blueb_primary;
+    border:0;
+}
+.checkbox-item-input input[type='checkbox']:checked + .checkbox-item-inner:before {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    font-size:20px;
+    content: '\e917';
+    color: $color_gold_primary;
+    opacity: 1;
+}
+
+.checkbox-item-inner {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+
+.radio-item-group {
+    display:flex;
+}
+
+.radio-item {
+    display: flex;
+    align-items: center;
+}
+
+.radio-item-input {
+    position:relative;
+    display:inline-block;
+    box-sizing:border-box;
+    padding:0;
+    background:none;
+    vertical-align:top
+}
+
+.radio-item-input input[type='radio'] {
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:1;
+    cursor:pointer;
+    opacity:0;
+    vertical-align:top
+}
+
+.radio-item-inner {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: none;
+    border: solid 1px $color_action_blueb_tertiary;
+    border-radius: 50%;
+}
+
+.radio-item-input input[type='radio']:checked + .radio-item-inner {
+    background-color: $color_action_blueb_primary;
+}
+
+.radio-item-input input[type='radio']:checked + .radio-item-inner::before {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: solid 1px $color_gold_primary;
+    font-size:20px;
+    border-radius: 50%;
+    opacity: 1;
+    content: ' ';
+}
+
+.radio-item-text {
+    vertical-align:top
+}
+
+
+
+/* switch */
+.switch-item-group {
+    display: flex;
+}
+.switch-item {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.switch-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0
+}
+.switch-text {
+    position: relative;
+    display: block;
+    height: inherit;
+    font-size: 12.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: inherit;
+    transition: 0.15s ease-out;
+}
+.switch-text:before,
+.switch-text:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+}
+
+.switch-input~.switch-text{
+    background:$color_action_grey_primary
+}
+.switch-input:checked~.switch-text{
+    background:$color_action_blueb_primary
+}
+.switch-text:before { //on
+    content: attr(data-switch);
+    right: 11px;
+    color: #000;
+}
+.switch-text:after { // off
+    content: attr(data-switch);
+    left: 11px;
+    color: #000;
+    opacity: 0;
+}
+
+.switch-input:checked~.switch-text:before {
+    opacity: 0
+}
+
+.switch-input:checked~.switch-text:after {
+    //opacity: 1
+    opacity: 1
+}
+.switch-handle {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: $color_action_white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 $color_shadow_primary;
+    transition: left 0.15s ease-out;
+}
+.switch-input:checked~.switch-handle {
+    left: calc(44px - 22px);
+    box-shadow: none
+}
