@@ -1,0 +1,112 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-27
+ * @ Description: 이벤트 리스트
+ * @ zpl://screen?pid=5d1d633794d7ed78bcacd6f8&sid=5d1da1cc4657157308c3a879
+ */
+
+.faq-wrap input {
+    border: 1px solid #000;
+}
+.test {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.faq-item {
+    padding-bottom: 20px;
+
+    a {
+        display: block;
+        padding: 0 20px;
+    }
+
+    .faq-item-title {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0 12px 0;
+
+        strong {
+            flex: 1
+        }
+        button {
+            display: none;
+            height: 32px;
+            padding: 0 12px;
+            margin-left: 14px;
+            border-radius: 32px;
+            background-color: $color_action_blueb_primary;
+            color: $color_gold_secondary;
+            @include font_action_secondary;
+        }
+
+        strong {
+            display: block;
+            color: $color_text_dark_primary;
+            @include font_title_1r;
+        }
+
+        time {
+            display: block;
+            padding-top: 5px;
+            color: $color_text_dark_primary;
+            @include font_etc_2r;
+        }
+    }
+
+    figure {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        border-radius: 2px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &.faq-item__disable {
+
+        .faq-item-title {
+
+            button {
+                display: block;
+            }
+        }
+
+        strong {
+            color: $color_text_dark_hint;
+        }
+
+        time {
+            color: $color_text_dark_hint;
+            @include font_etc_2r;
+        }
+
+        figure:before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: '종료된 이벤트입니다.';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 20;
+            color: $color_text_dark_hint;
+            @include font_title_3b;
+        }
+
+        figure:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: $color_filter_banner;
+        }
+    }
+}
