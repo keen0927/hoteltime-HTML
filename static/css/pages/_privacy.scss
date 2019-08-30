@@ -1,0 +1,352 @@
+
+/**
+ * @ Author: niki
+ * @ Create Time:
+ * @ Description: 개인정보처리방침 이용약관 CSS
+ */
+
+
+ 
+/* hoteltime legacy style */
+button {
+    -webkit-apperance: none;
+    outline: 0
+}
+
+.half_4 li {
+    width: 50% !important
+}
+
+.half_4 li:nth-child(even) a {
+    border-right: none
+}
+
+.half_4 li:nth-child(odd) a {
+    border-right: 1px solid rgba(0, 0, 0, 0.08) !important
+}
+
+.add_policy {
+    margin: 20px 0 30px 0;
+    text-decoration: underline
+}
+
+.terms {
+    padding: 20px 16px 20px 16px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.56);
+    transition: 0.4s
+}
+
+.terms h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.87)
+}
+
+.terms.down {
+    margin-top: 0
+}
+
+.terms .txt {
+    padding: 23px 0
+}
+
+.terms .txt table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border: 1px solid #ccc
+}
+
+.terms .txt table th {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.08);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.56)
+}
+
+.terms .txt table td {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 5px;
+    background: rgb(250, 250, 250);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.56)
+}
+
+.terms .txt article {
+    display: none
+}
+
+.terms .txt article:first-child {
+    display: block
+}
+
+.terms .add_policy {
+    display: block;
+    margin: 20px 0;
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87)
+}
+
+.terms strong {
+    display: block;
+    padding: 20px 0;
+    margin: 0;
+    color: #000
+}
+
+.terms p {
+    margin-bottom: 20px
+}
+
+.terms b {
+    display: block;
+    margin-bottom: 9px;
+    color: rgba(0, 0, 0, 0.87)
+}
+
+.terms ul {
+    margin-bottom: 20px
+}
+
+.terms ul li {
+    padding-left: 16px;
+    text-indent: -16px
+}
+
+.terms ul li ul {
+    margin: 5px 0
+}
+
+.terms ul li ul li {
+    padding-left: 15px;
+    text-indent: -15px
+}
+
+.terms .policy-list {
+    display: none
+}
+
+.terms .font-s {
+    font-size: 12px
+}
+
+.terms .bold-text {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.72)
+}
+
+.terms strong.bold-text {
+    display: inline;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.72)
+}
+
+.terms .button-policy {
+    padding: 15px 0;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: bold
+}
+
+.terms .color-type01 {
+    color: cornflowerblue
+}
+
+.terms .bold-text.color-type01 {
+    color: cornflowerblue
+}
+
+.terms .business_list {
+    cursor: pointer
+}
+
+.terms .title {
+    cursor: pointer
+}
+
+.terms .content {
+    display: none;
+    padding: 0 17px;
+    margin-bottom: 0;
+}
+
+.terms .verify-block {
+    overflow: hidden;
+    position: relative;
+    padding-left: 120px;
+    padding-top: 40px;
+    min-height: 100px
+}
+
+.terms .verify-block b {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.terms .verify-block img {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100px;
+    height: 100px
+}
+
+.terms .verify-block .description div:first-child {
+    margin-bottom: 10px
+}
+
+.terms .verify-block span {
+    display: block;
+    margin-bottom: 10px
+}
+
+.terms .verify-block div strong {
+    display: inline;
+    padding: 0
+}
+
+.terms_02 {
+    padding: 28px 16px 30px 16px
+}
+
+.terms_02 h3 {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.87)
+}
+
+.terms_02 li,
+.terms_02 p {
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 80)
+}
+
+.terms_02 p~h3 {
+    margin-top: 32px
+}
+
+.terms_02 p+ul {
+    margin-top: 8px
+}
+
+.terms_new {
+    margin-top: 48px
+}
+
+.terms_align {
+    display: block !important;
+    margin-top: 0
+}
+
+.agree_section {
+    display: none
+}
+
+.agree_section.on {
+    display: block
+}
+
+.agree_tab {
+    position: relative;
+    padding: 0;
+    margin-bottom: 20px
+}
+
+.agree_tab button {
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    padding: 10px 15px
+}
+
+.agree_tab button.on {
+    border: 1px solid #e62a4a;
+    background: #e62a4a;
+    color: #fff
+}
+
+.agree_tab button:first-child {
+    float: left
+}
+
+/* custom style */
+.terms-wrap {
+    @include defaultContentLayout;
+}
+
+.terms {
+    @include font_body_1r_leading;
+    color: $color_text_dark_secondary
+}
+
+.terms strong,
+.terms b {
+    @include font_title_2b;
+    color: $color_text_dark_primary
+}
+
+.terms a {
+    color: $color_text_dark_primary;
+    text-decoration: underline
+}
+
+.terms .bold-text,
+.terms strong.bold-text,
+.terms .color-type01,
+.terms .bold-text.color-type01 {
+    color: $color_gold_primary
+}
+
+.terms .policy-list {
+    display: block
+}
+
+.terms .content {
+    display: block;
+    padding: 0
+}
+
+.terms table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.terms table th {
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    text-align: center;
+    padding: 5px;
+    background: $color_bg_tertiary;
+    color: $color_text_dark_tertiary;
+    @include font_etc_1b;
+}
+
+.terms table td {
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 5px;
+    background: none;
+    color: $color_text_dark_tertiary;
+    @include font_etc_1r_leading;
+}
