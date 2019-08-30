@@ -1,0 +1,161 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-30
+ * @ Description: 팝업 CSS
+ */
+
+// html, body {
+//     height: 100%;
+//     overflow: hidden;
+// }
+
+.popup-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    touch-action: none;
+
+    .popup-content {
+        overflow-y: auto;
+        flex: 1;
+        max-height: calc(568px - 180px); // 180은 상단 90 하단 90 여백의 합
+        margin: 0 40px;
+        padding: 12px 20px 22px 20px;
+        border-radius: 2px;
+        background-color: $color_bg_primary;
+        box-shadow: 0 2px 24px 0 $color_shadow_dialog;
+
+        @media (min-width: 375px) {
+            max-height: calc(667px - 180px);
+        }
+
+        @media (min-height: 812px) {
+            max-height: calc(812px - 180px);
+        }
+    }
+
+    .popup-title-area {
+        padding: 10px 0 2px 0;
+        color: $color_text_dark_primary;
+        @include font_title_1b;
+    }
+
+    .popup-content-area {
+        color: $color_text_dark_primary;
+        @include font_body_1r_leading;
+    }
+
+    .popup-content-body__regular {
+        padding-top: 10px;
+    }
+
+    .popup-content-body__small {
+        padding-top: 10px;
+        @include font_etc_1r_leading;
+    }
+
+    .popup-content-body-bullet__regular {
+        li {
+            position: relative;
+            padding: 10px 0 0 8px;
+            @include font_body_1r_leading;
+
+            &:before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                top: 18px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                border-radius: 100%;
+                background-color: $color_text_dark_primary;
+            }
+        }
+    }
+
+    .popup-content-body-bullet__small {
+        li {
+            position: relative;
+            padding: 10px 0 0 7px;
+            @include font_etc_1r_leading;
+
+            &:before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                top: 17px;
+                left: 0;
+                width: 2px;
+                height: 2px;
+                border-radius: 100%;
+                background-color: $color_text_dark_primary;
+            }
+        }
+    }
+
+    .popup-content-box {
+        overflow: hidden;
+        position: relative;
+        margin: 14px 0 6px 0;
+        padding: 4px 16px 14px 16px;
+        border-radius: 4px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $color_gold_secondary;
+            opacity: 0.24;
+        }
+    }
+
+    .popup-content-image {
+        padding: 12px 0 10px 0;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .popup-button-area {
+
+        a, button {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            @include font_action_primary;
+        }
+
+        .button-wrap__full-single {
+            height: 58px;
+            padding-top: 18px;
+        }
+
+        .button-wrap__stacked {
+            display: flex;
+            flex-direction: column;
+            height: 106px;
+            padding-top: 18px;
+
+            span {
+                height: 8px;
+            }
+        }
+
+        .button-wrap__half {
+            padding: 18px 0 0;
+        }
+    }
+}
