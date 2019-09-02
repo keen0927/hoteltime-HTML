@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../static/css/all.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="navigation-inner__left">
+            <button type="button"><i class="ic_back"></i></button>
+        </div>
+        <strong class="navigation-title">이벤트</strong>
+        <div class="virtual-element">&nbsp;</div>
+    </div>
+    <!-- //Navigation -->
+
+    <!-- Event List -->
+    <ul class="event-list-wrap">
+        <!-- #1 비활성화 버전 : 클래스 event-list-item__disable 추가 a태그에 #none 추가 -->
+        <li class="event-list-item event-list-item__disable">
+            <a href="#none">
+                <div class="event-list-item-title">
+                    <strong>
+                        이벤트 리스트 타이틀: 모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다.
+                        <time>타임 스탬프</time>
+                    </strong>
+                    <button type="button" onclick="eventModalControl.open();">당첨자발표</button>
+                </div>
+                <figure>
+                    <img src="../../static/image/sample-banner.jpg" alt="">
+                </figure>
+            </a>
+        </li>
+        <!-- #2 활성화 버전 -->
+        <li class="event-list-item">
+            <a href="#">
+                <div class="event-list-item-title">
+                    <strong>
+                        이벤트 리스트 타이틀: 모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다.
+                        <time>타임 스탬프</time>
+                    </strong>
+                    <button type="button">당첨자발표</button>
+                </div>
+                <figure>
+                    <img src="../../static/image/sample-banner.jpg" alt="">
+                </figure>
+            </a>
+        </li>
+        <li class="event-list-item">
+            <a href="#">
+                <div class="event-list-item-title">
+                    <strong>
+                        이벤트 리스트 타이틀
+                        <time>타임 스탬프</time>
+                    </strong>
+                    <button type="button">당첨자발표</button>
+                </div>
+                <figure>
+                    <img src="../../static/image/sample-banner.jpg" alt="">
+                </figure>
+            </a>
+        </li>
+        <li class="event-list-item">
+            <a href="#">
+                <div class="event-list-item-title">
+                    <strong>
+                        이벤트 리스트 타이틀
+                        <time>타임 스탬프</time>
+                    </strong>
+                    <button type="button">당첨자발표</button>
+                </div>
+                <figure>
+                    <img src="../../static/image/sample-banner.jpg" alt="">
+                </figure>
+            </a>
+        </li>
+        <li class="event-list-item">
+            <a href="#">
+                <div class="event-list-item-title">
+                    <strong>
+                        이벤트 리스트 타이틀
+                        <time>타임 스탬프</time>
+                    </strong>
+                    <button type="button">당첨자발표</button>
+                </div>
+                <figure>
+                    <img src="../../static/image/sample-banner.jpg" alt="">
+                </figure>
+            </a>
+        </li>
+        <li class="event-list-item">
+            <a href="#">
+                <div class="event-list-item-title">
+                    <strong>
+                        이벤트 리스트 타이틀
+                        <time>타임 스탬프</time>
+                    </strong>
+                    <button type="button">당첨자발표</button>
+                </div>
+                <figure>
+                    <img src="../../static/image/sample-banner.jpg" alt="">
+                </figure>
+            </a>
+        </li>
+    </ul>
+    <!-- //Event List -->
+
+    <!-- Modal Popup -->
+    <div class="modal-wrap">
+        <div class="modal-content">
+            <div class="modal-title-area">
+                여기어때 딜카 제휴 이벤
+            </div>
+            <div class="modal-content-area">
+                <div class="modal-content-body__regular">
+                    CMS에서 등록된 당첨자 내역을 이곳에 바인딩 
+                </div>
+            </div>
+            <div class="modal-button-area">
+                <div class="button-wrap__full-single">
+                    <button type="button" class="btn btn-primary" onclick="eventModalControl.close();">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Modal Popup -->
+
+    <!-- Script -->
+    <script src="../../static/js/service/components/navigation.js"></script>
+    <script src="../../static/js/service/pages/event-list.js"></script>
+
+    <script>
+        navigation.init('dark');
+    </script>
+
+</body>
+
+</html>

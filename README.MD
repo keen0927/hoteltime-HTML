@@ -1,10 +1,12 @@
 # 호텔타임 2.0 웹뷰 HTML 
 
+### 문서
 [지라](https://confluence.abouthere.kr/pages/viewpage.action?pageId=726407182)
 
 [제플린](zpl://project?pid=5d1d633794d7ed78bcacd6f8)
 
-<hr>
+### CDN
+CSS : https://static.goodchoice.kr/ht-webview/css/all.css
 
 ### vscode extension
 

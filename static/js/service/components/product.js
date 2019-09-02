@@ -44,9 +44,9 @@ var productList = (function(){
         var handlerImage = imageSizeSet(),
             panoramaImageHeight = handlerImage.getHeight();
 
-        document.querySelectorAll('.product-panorama-image').forEach(function(element){
-            element.style.height = panoramaImageHeight + 'px';
-        });
+        // document.querySelectorAll('.product-panorama-image').forEach(function(element){
+        //     element.style.height = panoramaImageHeight + 'px';
+        // });
 
         document.querySelector(elementWrapClass).classList.add('show');
     }

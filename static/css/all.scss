@@ -25,10 +25,11 @@
 @import './components/popup-toast';
 @import './components/product';
 @import './components/control-element';
+@import './components/modal';
 
-// Page
-@import './pages/home';
+// Page 더보기
 @import './pages/error';
-@import './pages/faq';
-@import './pages/notice';
-@import './pages/event-list';
+@import './pages/more/faq';
+@import './pages/more/notice';
+@import './pages/more/privacy';
+@import './pages/more/event-list';
