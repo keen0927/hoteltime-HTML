@@ -5,13 +5,11 @@
  * @ zpl://screen?pid=5d1d633794d7ed78bcacd6f8&sid=5d1da1cc4657157308c3a879
  */
 
-.test {
-    position: fixed;
-    bottom: 0;
-    right: 0;
+.event-list-wrap {
+    @include defaultContentLayout;
 }
 
-.faq-item {
+.event-list-item {
     padding-bottom: 20px;
 
     a {
@@ -19,7 +17,7 @@
         padding: 0 20px;
     }
 
-    .faq-item-title {
+    .event-list-item-title {
         display: flex;
         justify-content: space-between;
         padding: 20px 0 12px 0;
@@ -64,9 +62,9 @@
         }
     }
 
-    &.faq-item__disable {
+    &.event-list-item__disable {
 
-        .faq-item-title {
+        .event-list-item-title {
 
             button {
                 display: block;

@@ -9,8 +9,10 @@
 //     overflow: hidden;
 // }
 
-.popup-wrap {
-    display: flex;
+$modal-open-duration: 0.4s;
+
+.modal-wrap {
+    display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -21,8 +23,18 @@
     height: 100%;
     background-color: rgba(0,0,0,0.5);
     touch-action: none;
+    opacity: 0;
+    transition: opacity $modal-open-duration;
 
-    .popup-content {
+    &.show {
+        display: flex;
+    }
+
+    &.fade-in {
+        opacity: 1;
+    }
+
+    .modal-content {
         overflow-y: auto;
         flex: 1;
         max-height: calc(568px - 180px); // 180은 상단 90 하단 90 여백의 합
@@ -41,27 +53,27 @@
         }
     }
 
-    .popup-title-area {
+    .modal-title-area {
         padding: 10px 0 2px 0;
         color: $color_text_dark_primary;
         @include font_title_1b;
     }
 
-    .popup-content-area {
+    .modal-content-area {
         color: $color_text_dark_primary;
         @include font_body_1r_leading;
     }
 
-    .popup-content-body__regular {
+    .modal-content-body__regular {
         padding-top: 10px;
     }
 
-    .popup-content-body__small {
+    .modal-content-body__small {
         padding-top: 10px;
         @include font_etc_1r_leading;
     }
 
-    .popup-content-body-bullet__regular {
+    .modal-content-body-bullet__regular {
         li {
             position: relative;
             padding: 10px 0 0 8px;
@@ -81,7 +93,7 @@
         }
     }
 
-    .popup-content-body-bullet__small {
+    .modal-content-body-bullet__small {
         li {
             position: relative;
             padding: 10px 0 0 7px;
@@ -101,7 +113,7 @@
         }
     }
 
-    .popup-content-box {
+    .modal-content-box {
         overflow: hidden;
         position: relative;
         margin: 14px 0 6px 0;
@@ -120,7 +132,7 @@
         }
     }
 
-    .popup-content-image {
+    .modal-content-image {
         padding: 12px 0 10px 0;
 
         img {
@@ -128,7 +140,7 @@
         }
     }
 
-    .popup-button-area {
+    .modal-button-area {
 
         a, button {
             width: 100%;
