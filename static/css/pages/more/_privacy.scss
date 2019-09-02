@@ -286,9 +286,6 @@ button {
 }
 
 /* custom style */
-.terms-wrap {
-    @include defaultContentLayout;
-}
 
 .terms {
     @include font_body_1r_leading;
@@ -347,4 +344,22 @@ button {
     background: none;
     color: $color_text_dark_tertiary;
     @include font_etc_1r_leading;
+}
+
+/* 스타일 */
+.navigation {
+    background: #fff !important;
+}
+
+.terms-wrap {
+    padding-top: 96px; // 56 + 40
+}
+
+.terms-wrap__padding-0 {
+    padding-top: 56px;
+}
+
+.tab-wrap {
+    position: fixed;
+    top: 56px;
 }

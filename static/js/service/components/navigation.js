@@ -12,8 +12,6 @@ var navigation = (function(){
 
         windowScrollEventExecute(handleScrollEvent);
         typeSetting(type);
-
-        
     }
 
     // 백그라운드 컨트롤
