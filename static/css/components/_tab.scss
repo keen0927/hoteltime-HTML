@@ -1,0 +1,36 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-09-02
+ * @ Description: 탭 모듈
+ */
+
+.tab-wrap {
+    overflow: hidden;
+    width: 100%;
+    height: 40px;
+    background-color: #fff;
+}
+
+.tab-item {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    padding: 0 16px;
+    line-height: 40px;
+    color: $color_text_dark_hint;
+    @include font_title_1b;
+
+    &.tab-item__active {
+        color: $color_text_dark_primary;
+
+        &:after {
+            content: '';
+            position: absolute;
+            right: 16px;
+            bottom: 0;
+            left: 16px;
+            height: 2px;
+            background-color: $color_text_dark_primary;
+        }
+    }
+}
