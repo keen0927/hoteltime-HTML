@@ -6,7 +6,6 @@ var navigation = (function(){
 
     // InitialState
     function init(type) {
-
         if (type === undefined) throw new TypeError('type을 지정해주세요 "dark" , "light"');
         if (typeof type !== 'string') throw new TypeError('type은 string입니다. "dark" , "light" 타입중 하나를 인자로 넣어주세요');
 

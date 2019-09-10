@@ -23,7 +23,9 @@ $duration: 0.3s;
     transition: $duration;
 
     &.popup-toast__bottom-space {
-        bottom: 48px;
+        bottom: 80px; // 48 + 32
+        bottom: safe(constant, bottom, 80px);
+        bottom: safe(env, bottom, 80px);
     }
 
     &.show {

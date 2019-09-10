@@ -12,85 +12,62 @@ var productList = (function(){
     // Initialize
     function init() {
         productShow('.product-panorama-wrap');
-        toggleFavorite();
-        productPriceAreaSet();
+        // toggleFavorite(); 찜기능 추후 고도화때 업데이트
     }
 
     // Infinite Scroll용 Reset
-    function reset() {
-        console.log('reset');
-        toggleFavorite();
-        productPriceAreaSet();
-    }
-
-    // 이미지사이즈 셋팅
-    function imageSizeSet() {
-            var calculateImageHeight = Math.floor(((getWindowWidth - 40) / 16) * 9);
-
-        return {
-            getHeight: function() {
-                return calculateImageHeight;
-            },
-            getWindowWidth: function() {
-                return getWindowWidth;
-            }
-        }
-    }
+    // function reset() {
+    //     toggleFavorite();
+    // }
 
     function productShow(elementWrapClass) {
 
         if (typeof elementWrapClass !== 'string') throw new TypeError("대상의 클래스 명을 추가해주세요 예)'.product-panorama-wrap'");
 
-        var handlerImage = imageSizeSet(),
-            panoramaImageHeight = handlerImage.getHeight();
-
-        // document.querySelectorAll('.product-panorama-image').forEach(function(element){
-        //     element.style.height = panoramaImageHeight + 'px';
-        // });
-
         document.querySelector(elementWrapClass).classList.add('show');
     }
 
     // 찜버튼 토글
-    function toggleFavorite() {
-        var targetElements = document.querySelectorAll('.product-favorite'),
-            activeClass = 'product-favorite__active';
+    // function toggleFavorite() {
+    //     var targetElements = document.querySelectorAll('.product-favorite'),
+    //         activeClass = 'product-favorite__active';
 
-        for ( i = 0 ; i <= targetElements.length ; i++ ) {
+    //     for ( i = 0 ; i <= targetElements.length ; i++ ) {
 
-            if (targetElements[i] === undefined) return;
+    //         if (targetElements[i] === undefined) return;
 
-            targetElements[i].addEventListener('click',function(){
-                if(this.classList.contains(activeClass)) {
-                    this.classList.remove(activeClass);
-                    return;
-                }
-                this.classList.add(activeClass);
-            });
-        }
-    }
+    //         targetElements[i].addEventListener('click',function(){
+    //             if(this.classList.contains(activeClass)) {
+    //                 this.classList.remove(activeClass);
+    //                 return;
+    //             }
+    //             this.classList.add(activeClass);
+    //         });
+    //     }
+    // }
 
     // 가격표 UI 컨트롤 - 가격 영역 내 자리가 부족하면 실시간 정보 미노출
-    function productPriceAreaSet() {
+    // function productPriceAreaSet() {
 
-        var targetElements = document.querySelectorAll('.product-price-info__left'),
-            productWrapWidth = document.querySelector('.product-price-area').offsetWidth;
+    //     var targetElements = document.querySelectorAll('.product-price-info__left'),
+    //         productWrapWidth = document.querySelector('.product-price-area').offsetWidth;
 
-        if (getWindowWidth <= 320) return; // 320px 이하 대응
+    //     if (getWindowWidth <= 320) return; // 320px 이하 대응
 
-        for ( i = 0 ; i <= targetElements.length ; i++ ) {
+    //     for ( i = 0 ; i <= targetElements.length ; i++ ) {
 
-            if (targetElements[i] === undefined) return;
+    //         if (targetElements[i] === undefined) return;
 
-            var nextElement = targetElements[i].nextElementSibling,
-                getWidthLeftElement = targetElements[i].offsetWidth,
-                getWidthRightElement = nextElement.offsetWidth,
-                calculateWidth = getWidthLeftElement + getWidthRightElement + 20;
+    //         var nextElement = targetElements[i].nextElementSibling,
+    //             getWidthLeftElement = targetElements[i].offsetWidth,
+    //             getWidthRightElement = nextElement.offsetWidth,
+    //             calculateWidth = getWidthLeftElement + getWidthRightElement + 20;
 
-            if (calculateWidth >= productWrapWidth) nextElement.style.display = 'none';
-        }
-    }
+    //         if (calculateWidth >= productWrapWidth) nextElement.style.display = 'none';
+    //     }
+    // }
 
+    // 인피니티 스크롤
     function infiniteScroll() {
 
         var windowHeight = window.innerHeight;
@@ -119,7 +96,6 @@ var productList = (function(){
 
     return {
         init: init,
-        reset: reset,
         infiniteScroll: infiniteScroll
     }
 })();

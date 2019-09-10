@@ -28,3 +28,56 @@
     padding: 56px 0 safe(constant, bottom, 20px) 0;
     padding: 56px 0 safe(env, bottom, 20px) 0;
 }
+
+// 박스 그림자
+@mixin add-box-shadow($horizontal, $vertical, $blur, $spread, $color) {
+    -webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+    -moz-box-shadow: $horizontal $vertical $blur $spread $color;
+    box-shadow: $horizontal $vertical $blur $spread $color;
+}
+
+// Placeholder Hint
+@mixin input-placeholder-color($color){
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+@mixin input-placeholder-weight($weight){
+    &::-webkit-input-placeholder {
+        font-weight: $weight;
+    }
+    &:-moz-placeholder {
+        font-weight: $weight;
+    }
+    &::-moz-placeholder {
+        font-weight: $weight;
+    }
+    &:-ms-input-placeholder {
+        font-weight: $weight;
+    }
+}
+
+// Visiblity Hidden
+@mixin element-hidden {
+    position: absolute;
+    top: -9999px;
+    visibility: hidden;
+}
+
+// ICON MIXIN
+@mixin icon-insert ($code, $color, $size) {
+    font-family: 'icomoon';
+    content: $code;
+    font-size: $size;
+    color: $color;
+}

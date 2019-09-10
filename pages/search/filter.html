@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../static/css/search.css" />
+</head>
+
+<body>
+    <!-- #1 search-filter -->
+    <div class="search-filter">
+        <!-- Navigation -->
+        <div class="navigation-filter">
+            <div class="navigation-filter-inner__left">
+                <button type="button"><i class="icon-ic_close"></i></button>
+            </div>
+            <strong class="navigation-filter-title">정렬 및 필터</strong>
+            <div class="navigation-inner__right">
+                <button type="button" class="navigation-button-text">
+                    초기화
+                </button>
+            </div>
+        </div>
+        <!-- //Navigation -->
+
+        <!-- Filter Content -->
+        <div class="filter-wrap">
+            <!-- 정렬기준 -->
+            <h2 class="filter-group-header">정렬</h2>
+            <div class="filter-group-field">
+                <button type="button" class="filter-align-price" onclick="actionSheet.show('.js-action-sheet-sort');">
+                    거리순
+                </button>
+            </div>
+
+            <!-- 투숙인원 -->
+            <h2 class="filter-group-header">
+                <span>투숙인원</span>
+                <button class="filter-group-header__button" onclick="toastPopup.show('일반적으로 유아 및 아동은 객실 인원에 포함 되므로 검색 시 유아 및 아동도 인원 수에 포함 해 주셔야 합니다.',true);">
+                    인원 설정 안내<i class="icon-ic_question"></i>
+                </button>
+            </h2>
+            <div class="filter-group-field">
+                <div class="filter-group-count">
+                    <span class="js-count-person">2명</span>
+                    <div>
+                        <button type="button" class="js-increment-person">
+                            <i class="icon-ic_add"></i>
+                        </button>
+                        <em>&nbsp;</em>
+                        <button type="button" class="js-decrement-person" disabled>
+                            <i class="icon-ic_remove"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 등급 -->
+            <h2 class="filter-group-header">등급</h2>
+            <div class="filter-group-field">
+                <button class="btn">특급호텔</button>
+                <button class="btn">일반호텔</button>
+                <button class="btn">리조트</button>
+                <button class="btn">펜션</button>
+                <!-- <button class="btn btn__active">특급 호텔</button> -->
+            </div>
+
+            <!-- 배드타입 -->
+            <h2 class="filter-group-header">배드타입</h2>
+            <div class="filter-group-field">
+                <button class="btn">싱글</button>
+                <button class="btn">더블</button>
+                <button class="btn">트윈</button>
+                <button class="btn">온돌방</button>
+            </div>
+
+            <!-- 부대시설 -->
+            <h2 class="filter-group-header">부대시설</h2>
+            <div class="filter-group-field">
+                <button class="btn">수영장</button>
+                <button class="btn">사우나</button>
+                <button class="btn">주차</button>
+                <button class="btn">장애인시설</button>
+            </div>
+
+            <!-- 가격정보 -->
+            <h2 class="filter-group-header">
+                <p>
+                    가격정보
+                    <span class="filter-header-info">
+                        <input type="text" class="js-range-price" readonly />
+                    </span>
+                </p>
+            </h2>
+            <div class="filter-group-field filter-group-field__range">
+                <div class="filter-range"></div>
+                <div class="filter-range-text"><span>0원</span><span>100만원</span></div>
+            </div>
+        </div>
+        <!-- //Filter Content -->
+
+        <!-- Float Button -->
+        <div class="button-wrap__full button-wrap__float">
+            <button type="button" class="btn btn-primary" disabled>
+                적용
+            </button>
+        </div>
+        <!-- //Float Button -->
+    </div>
+    <!-- #1 search-filter -->
+
+    <!-- 액션시트 -->
+    <div class="action-sheet js-action-sheet-sort">
+        <div class="action-sheet-element">
+            <div class="action-sheet-title">
+                <strong>TITLE - 타이틀입니다.</strong>
+                <p>SubTitle - 서브타이틀 입니다 서브타이틀 입니다 서브타이틀 입니다 서브타이틀 입니다.</p>
+            </div>
+            <div class="action-sheet-content__list">
+                <ul>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">거리순</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">랭킹순</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">높은 가격순</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">낮은 가격순</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="action-sheet-dim"></div>
+    </div>
+    <!-- //액션시트 -->
+
+    <!-- Script -->
+    <script src="../../static/js/library/jquery-1.12.4.min.js"></script>
+    <script src="../../static/js/library/jquery-ui.min.js"></script>
+
+    <script src="../../static/js/service/components/popup-toast.js"></script>
+    <script src="../../static/js/service/components/action-sheet.js"></script>
+    <script src="../../static/js/service/pages/filter.js"></script>
+</body>
+
+</html>
