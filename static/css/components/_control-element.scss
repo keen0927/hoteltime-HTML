@@ -40,6 +40,7 @@ input[type='checkbox']{
     height: 20px;
     border: solid 1px $color_action_blueb_tertiary;
     border-radius: 2px;
+    color: #fff;
 }
 
 .checkbox-item-input input[type='checkbox']:checked + .checkbox-item-inner {

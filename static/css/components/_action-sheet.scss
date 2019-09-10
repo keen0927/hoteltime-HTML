@@ -1,0 +1,95 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-09-03
+ * @ Description: 액션시트 SCSS
+ */
+
+$transition-dim__fade-in: 0.4s;
+$transition-transform: 0.3s;
+
+.action-sheet {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    touch-action: none;
+
+    &.action-sheet__show {
+        display: block;
+    }
+}
+
+.action-sheet-dim {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $color_filter_dialog;
+    transition: $transition-dim__fade-in;
+    opacity: 0;
+    will-change: opacity;
+
+    &.action-sheet-dim__fade-in {
+        opacity: 1;
+    }
+}
+
+.action-sheet-element {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    padding: 0 0 4px 0;
+    padding: 0 0 safe(constant, bottom, 1px) 0;
+    padding: 0 0 safe(env, bottom, 1px) 0;
+    border-radius: 12px 12px 0 0;
+    background-color: $color_bg_primary;
+    box-shadow: 0 2px 24px $color_shadow_dialog;
+    transition: $transition-transform;
+    transform: translateY(100%);
+    will-change: transform;
+
+    &.action-sheet-element__scroll-up {
+        transform: translateY(0);
+    }
+}
+
+.action-sheet-title {
+    padding: 29px 20px 14px 20px;
+
+    strong {
+        display: block;
+        padding: 3px 0 10px 0;
+        color: $color_text_dark_primary;
+        @include font_hero_1b;
+    }
+
+    p {
+        padding-bottom: 13px;
+        color: $color_text_dark_primary;
+        word-break: keep-all;
+        @include font_title_1r_leading;
+    }
+}
+
+.action-sheet-content__list {
+    border-top: 1px solid $color_divider_dark;
+    margin: 0 20px;
+    padding: 16px 0;
+
+    label {
+        height: 48px;
+        color: $color_text_dark_primary;
+        @include font_title_1m;
+
+        .radio-item-input {
+            margin-right: 16px;
+        }
+    }
+}

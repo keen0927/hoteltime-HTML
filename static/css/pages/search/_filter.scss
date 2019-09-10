@@ -1,0 +1,319 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-09-02
+ * @ Description: 필터
+ */
+
+// 네비게이션 - 필터
+.navigation-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 500;
+    min-width: 320px;
+    height: 56px;
+    padding: 0 8px 0 10px;
+    padding-top: 0;
+    padding-top: safe(constant, top);
+    padding-top: safe(env, top);
+    box-sizing: content-box;
+    background-color: $color_bg_tertiary;
+    color: $color_text_dark_primary;
+
+    .navigation-filter-inner__left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+
+        button {
+            width: 40px;
+            height: 40px;
+            color: inherit;
+        }
+
+        i {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            font-size: 20px;
+        }
+    }
+
+    .navigation-filter-title {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 8px;
+        color: inherit;
+        @include font_gnb_title();
+    }
+
+    .navigation-inner__right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 48px;
+
+        .navigation-button-text {
+            width: auto;
+            padding: 0 12px;
+            text-align: center;
+            color: $color_action_blueb_primary;
+            @include font_gnb_action;
+        }
+
+        button {
+            color: inherit;
+        }
+    }
+}
+
+.filter-wrap {
+    padding-top: 73px; // 57 + 16;
+    padding-top: safe(constant, top, 73px);
+    padding-top: safe(env, top, 73px);
+
+    padding-bottom: 62px;
+    padding-top: safe(constant, bottom, 62px);
+    padding-top: safe(env, bottom, 62px);
+}
+
+.filter-group-header {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 20px;
+    color: $color_text_blueb_secondary;
+    justify-content: space-between;
+    @include font_title_2b;
+}
+
+.filter-header-info {
+    input {
+        border: 0;
+        color: $color_gold_primary;
+        margin-left: 8px;
+        @include font_title_2b;
+    }
+}
+
+.filter-group-header__button {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding-left: 10px;
+    color: $color_action_blueb_secondary;
+    line-height: 40px;
+    @include font_etc_1b;
+
+    i {
+        padding-left: 4px;
+        font-size: 16px;
+        color: $color_action_blueb_secondary;
+    }
+}
+
+@mixin filter-button {
+    margin-right: 8px;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: 36px;
+}
+
+.filter-group-field {
+    display: flex;
+    padding: 0 20px 24px 20px;
+
+    .btn {
+        background-color: $color_action_grey_primary;
+        color: $color_text_dark_primary;
+        @include font_filter;
+        @include filter-button;
+    }
+
+    .btn__active {
+        background-color: $color_action_blueb_primary;
+        // color: $color_text_dark_primary;
+        color: #fff;
+        @include font_filter_on;
+        @include filter-button;
+    }
+}
+
+@mixin iconAlignCenter {
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    font-family: 'icomoon' !important;
+    font-size: 20px;
+}
+
+.filter-align-price {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    padding-left: 44px;
+    border-radius: 4px;
+    background-color: $color_action_grey_primary;
+    color: $color_text_dark_primary;
+    text-align: left;
+    @include font_action_primary;
+
+    &:before {
+        left: 14px;
+        color: $color_action_blueb_tertiary;
+        content: "\e936";
+        @include iconAlignCenter;
+    }
+    &:after {
+        right: 14px;
+        color: $color_action_blueb_secondary;
+        content: "\e91c";
+        @include iconAlignCenter;
+    }
+}
+
+.filter-group-count {
+    display: flex;
+    position: relative;
+    flex: 1;
+    height: 48px;
+    padding-left: 44px;
+    border-radius: 4px;
+    background-color: $color_action_grey_primary;
+
+    &:before {
+        left: 14px;
+        color: $color_action_blueb_tertiary;
+        content: "\e924";
+        @include iconAlignCenter;
+    }
+    span {
+        flex: 1;
+        line-height: 48px;
+        color: $color_text_dark_primary;
+        @include font_action_primary;
+    }
+    > div {
+        display: flex;
+        align-items: center;
+    }
+    em {
+        display: inline-block;
+        width: 1px;
+        height: 26px;
+        background: #fff;
+    }
+    button {
+        width: 48px;
+        height: 48px;
+        font-size: 14px;
+        color: $color_action_blueb_primary;
+
+        &:disabled {
+            color: $color_text_dark_disabled;
+        }
+    }
+}
+
+// UI SLIDER
+.filter-group-field__range {
+    display: block;
+    padding-top: 20px;
+}
+
+.filter-range-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 0 10px 0;
+    color: $color_text_dark_tertiary;
+    @include font_etc_1r;
+}
+
+.filter-range {
+    // padding: 0 14px
+    &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: -28px;
+        right: -28px;
+        height: 4px;
+        background: #ebebeb;
+
+    }
+}
+
+.ui-slider {
+    position: relative;
+    margin: 0 28px;
+    text-align: left;
+
+    .ui-slider-handle {
+        position: absolute;
+        z-index: 2;
+        width: 28px;
+        height: 28px;
+        border: 2px solid $color_bg_quaternary;
+        border-radius: 100%;
+        background: $color_bg_primary;
+        box-shadow: 0 2px 16px 0 $color_shadow_secondary;
+        outline: 0;
+        -ms-touch-action: none;
+        touch-action: none;
+    }
+
+    .ui-slider-range {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        border: 0;
+        background-position: 0 0;
+    }
+}
+
+.ui-slider-horizontal {
+    height: 4px;
+
+    .ui-slider-handle {
+        top: -12px;
+
+        &:nth-of-type(1) {
+            margin-left: -28px;
+            border: 2px solid $color_bg_quaternary;
+        }
+
+        &:nth-of-type(2) {
+            margin-left: 0px;
+            border: 2px solid $color_bg_quaternary;
+        }
+    }
+    .ui-slider-range {
+        top: 0;
+        height: 100%;
+    }
+    .ui-slider-range-min {
+        left: 0;
+    }
+    .ui-slider-range-max {
+        right: 0;
+    }
+}
+
+.ui-widget.ui-widget-content {
+    border: 0;
+    border-radius: 0;
+    background-color: $color_bg_quaternary;
+}
+
+.ui-widget-header {
+    background-color: $color_action_blueb_primary;
+}
+

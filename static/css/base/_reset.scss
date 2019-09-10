@@ -129,3 +129,8 @@ input[type="search"]::-webkit-search-results-decoration {
 .padding__clear {
     padding: 0 !important;
 }
+
+.preventScrollY {
+    height: 100%;
+    overflow: hidden;
+}
