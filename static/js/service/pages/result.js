@@ -6,12 +6,6 @@
 
 var searchResultControl = (function () {
 
-    // Initialize
-    var init = function () {
-        gnbScrollAnimate();
-        quickFilterButtonToggle();
-    }
-
     var isAddEvent = false;
 
     var gnbScrollAnimate = function () {
@@ -68,10 +62,31 @@ var searchResultControl = (function () {
         });
     }
 
+    // 검색결과 Visible 컨트롤
+    var resultVisibleControl = {
+        show: function() {
+            animateAdd('.search-result');
+            animateRemove('.search-home');
+            init();
+        },
+        hide: function() {
+            animateRemove('.search-result');
+            animateAdd('.search-home');
+        },
+        reset: function() {
+            // 리셋
+        }
+    }
+
+    // Initialize
+    var init = function () {
+        gnbScrollAnimate();
+        quickFilterButtonToggle();
+    }
+
     return {
-        init: init
+        init: init,
+        resultVisibleControl: resultVisibleControl
     }
 
 })();
-
-searchResultControl.init();

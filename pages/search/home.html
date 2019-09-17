@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link rel="stylesheet" href="../../static/css/library/swiper.min.css" />
+    <link rel="stylesheet" href="../../static/css/search.css" />
+</head>
+
+<body>
+
+    <!-- 검색홈 -->
+    <div class="search-home">
+
+        <!-- 검색홈 : GNB -->
+        <div class="search-navigation">
+            <div class="search-navigation-button-area">
+                <button type="button"><span>닫기</span></button>
+                <!-- TODO: ONOFF -->
+                <button type="button" class="button-prev-result">이전 결과보기</button>
+            </div>
+            <!-- <div class="search-navigation-search-area search-navigation__add-reset-button"> -->
+            <div class="search-navigation-search-area">
+                <form>
+                    <input type="search" class="js-search-input" placeholder="지역, 명소, 숙소명을 검색해보세요.">
+                </form>
+            </div>
+        </div>
+        <!-- //검색홈 : GNB -->
+
+        <!-- TODO: 검색어 없을때 -->
+
+        <!-- 인기,최근 검색어 -->
+        <div class="keyword-swiper-wrap">
+
+            <!-- 탭 -->
+            <div class="tab-wrap js-keyword-tab">
+                <div class="tab-inner">
+                    <button type="button" class="tab-item tab-item__active">인기 검색어</button>
+                    <button type="button" class="tab-item">최근 검색어</button>
+                </div>
+            </div>
+            <!-- //탭 -->
+
+            <!-- Swiper -->
+            <div class="search-home-keyword">
+                <div class="swiper-container swiper-container__keyword js-keyword-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Swiper : 인기 검색어-->
+                        <ul class="swiper-slide swiper-popular-keyword js-slide">
+                            <li>
+                                <a href="#" onclick="searchResultControl.resultVisibleControl.show();">
+                                    <b>1</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>2</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>3</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>4</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>5</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>6</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>7</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>8</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>9</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b>10</b>
+                                    <p><span>인기검색어</span><i>HOT</i></p>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Swiper : 최근 검색어 -->
+                        <ul class="swiper-slide swiper-recently-keyword js-slide">
+                            <li>
+                                <a href="#none" onclick="searchResultControl.resultVisibleControl.show();">
+                                    <p>
+                                        <span>List Title 강조가 필요하면 List Title 강조가 필요하면 List Title 강조가 필요하면
+                                            <b>BOLD</b></span>
+                                        <small>Subtitle - 서브데이터(표기는 정책에 따름) 서브데이터(표기는 정책에 따름) 서브데이터(표기는 정책에 따름)</small>
+                                    </p>
+                                </a>
+                                <button type="button"><span>삭제</span></button>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>
+                                        <span>List Title 강조가 필요하면 <b>BOLD</b></span>
+                                        <small>Subtitle - 서브데이터(표기는 정책에 따름)</small>
+                                    </p>
+                                </a>
+                                <button type="button"><span>삭제</span></button>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>
+                                        <span>List Title 강조가 필요하면 <b>BOLD</b></span>
+                                    </p>
+                                </a>
+                                <button type="button"><span>삭제</span></button>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>
+                                        <span>List Title 강조가 필요하면 <b>BOLD</b></span>
+                                    </p>
+                                </a>
+                                <button type="button"><span>삭제</span></button>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>
+                                        <span>List Title 강조가 필요하면 <b>BOLD</b></span>
+                                        <small>Subtitle - 서브데이터(표기는 정책에 따름)</small>
+                                    </p>
+                                </a>
+                                <button type="button"><span>삭제</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Swiper -->
+
+            <!-- 하단 고정 영역-->
+            <div class="gradient-box">
+                <div>
+                    <ul>
+                        <li><time>Time Stamp</time></li>
+                        <li><button type="button" onclick="keywordControl.handleRemoveItemAll()">전체 삭제</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //인기,최근 검색어 -->
+
+        <!-- 검색어 자동완성 -->
+        <div class="keyword-autocomplete-wrap">
+            <!-- 아이콘 클래스
+                    : icon-ic_building (빌딩)
+                    : icon-ic_location (지역)
+                -->
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_building"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_building"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_building"></i>
+                        List Title 강조가 필요하면 <b>볼드</b> 긴글을 작성해 봅시다 긴글을 작성해 봅시다.
+                        <small>Subtitle - 서브타이틀 입니다 서브타이틀 입니다 서브타이틀 입니다.</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="icon-ic_location"></i>
+                        List Title 강조가 필요하면 <b>볼드</b>
+                        <small>Subtitle - 서브타이틀 입니다</small>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- //검색어 자동완성 -->
+
+    </div>
+    <!-- //검색홈 -->
+
+    <!-- 검색결과 -->
+    <div class="search-result">
+
+        <!-- 검색결과 헤더 -->
+        <div class="search-result-navigation">
+            <button type="button" class="search-result-navigation-close" onclick="searchResultControl.resultVisibleControl.hide()"><span>닫기</span></button>
+            <div class="search-result-navigation-title">
+                <strong>검색 결과</strong>
+            </div>
+            <div class="search-result-navigation-button">
+                <div class="search-control-keyword">
+                    <button button="type">검색어</button>
+                    <button button="type"><span>RESET</span></button>
+                </div>
+                <div class="search-control-date">
+                    <button button="type">02.14 - 02.15 (1박)</button>
+                </div>
+            </div>
+            <!-- 퀵필터 -->
+            <div class="search-result-quickfilter">
+                <div>
+                    <div class="search-result-quickfilter-swiper">
+                        <div><button type="button">전체</button></div>
+                        <div><button type="button">호텔</button></div>
+                        <div><button type="button">리조트</button></div>
+                        <div><button type="button">부티크</button></div>
+                        <div><button type="button">펜션</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //검색결과 헤더 -->
+
+        <!-- 검색결과 리스트 -->
+        <div class="search-result-list">
+
+            <!-- Empty Area : 네트워크 오류 이미지 파일명 img_illu_network.png 
+            <div class="search-empty-area">
+                <picture><img src="../../static/image/img_illu_search.png" alt=""></picture>
+                <strong>조건에 맞는 숙소가 없습니다.</strong>
+                <small>필터조건을 재설정 해보세요.</small>
+                <button type="button">Action</button>
+            </div>
+            Empty Area -->
+
+            <ul class="product-panorama-wrap">
+
+                <li class="product-panorama">
+                    <figure class="product-panorama-image">
+                        <button type="button" class="product-360">
+                            <span class="icon-img_360_badge"><span class="path1"></span><span
+                                    class="path2"></span></span>
+                        </button>
+                        <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                            alt="">
+                    </figure>
+
+                    <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재(텍스트 영역 컨트롤용) -->
+                    <div class="product-title-area product-is-favorite">
+                        <span class="product-badge-category__secondary">호텔</span>
+                        <p class="product-title">Product Title(제휴점명)</p>
+                        <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                        <!-- 찜 on 클래스 : product-favorite__active -->
+                        <!-- <button type="button" class="product-favorite product-favorite__active"><i class="icon-ic_nav_fav"></i></button> -->
+                    </div>
+
+                    <div class="product-price-area">
+                        <div>
+                            <span class="product-price-caption">할인사유</span>
+                            <span class="product-price-sale">000,000원</span>
+                            <span class="product-price-default">000,000</span>
+                            <span class="product-price-day">/박</span>
+                        </div>
+                        <div>
+                            <span class="product-realtime-info">실시간정보</span>
+                        </div>
+                    </div>
+
+                    <div class="product-additional-info">
+                        <div>
+                            Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능 표현
+                            가능
+                        </div>
+                    </div>
+                </li>
+
+                <li class="product-panorama">
+                    <figure class="product-panorama-image">
+                        <button type="button" class="product-360">
+                            <span class="icon-img_360_badge"><span class="path1"></span><span
+                                    class="path2"></span></span>
+                        </button>
+                        <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                            alt="">
+                    </figure>
+
+                    <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                    <div class="product-title-area">
+                        <span class="product-badge-category__primary">호텔</span>
+                        <p class="product-title">Product Title(제휴점명)</p>
+                        <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                    </div>
+
+                    <div class="product-price-area">
+
+                        <div>
+                            <span class="product-price-soldout">SOLD OUT</span>
+                        </div>
+
+                    </div>
+
+                    <div class="product-additional-info">
+                        <div>
+                            Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능 표현
+                            가능
+                        </div>
+                    </div>
+                </li>
+
+                <li class="product-panorama">
+                    <figure class="product-panorama-image">
+                        <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                            alt="">
+                    </figure>
+
+                    <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                    <div class="product-title-area">
+                        <span class="product-badge-category__primary">호텔</span>
+                        <p class="product-title">Product Title(제휴점명)</p>
+                        <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                    </div>
+
+                    <div class="product-price-area">
+                        <div>
+                            <span class="product-price-caption">할인사유</span>
+                            <span class="product-price-sale">000,000원</span>
+                            <span class="product-price-default">000,000</span>
+                            <span class="product-price-day">/박</span>
+                        </div>
+                        <div>
+                            <span class="product-realtime-info">실시간정보</span>
+                        </div>
+                    </div>
+
+                    <div class="product-additional-info">
+                        <div>
+                            Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능 표현
+                            가능
+                        </div>
+                    </div>
+                </li>
+
+                <li class="product-panorama">
+                    <figure class="product-panorama-image">
+                        <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                            alt="">
+                    </figure>
+
+                    <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                    <div class="product-title-area">
+                        <span class="product-badge-category__primary">호텔</span>
+                        <p class="product-title">Product Title(제휴점명)</p>
+                        <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                    </div>
+
+                    <div class="product-price-area">
+                        <div>
+                            <span class="product-price-caption">할인사유</span>
+                            <span class="product-price-sale">000,000원</span>
+                            <span class="product-price-default">000,000</span>
+                            <span class="product-price-day">/박</span>
+                        </div>
+                        <div>
+                            <span class="product-realtime-info">실시간정보</span>
+                        </div>
+                    </div>
+
+                    <div class="product-additional-info">
+                        <div>
+                            Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능 표현
+                            가능
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- //검색결과 리스트 -->
+
+        <!-- 필터버튼 -->
+        <div class="global-button-filter">
+            <!-- 필터 적용시 클래스 "global-button-filter__active" 추가 -->
+            <button type="button" onclick="filterControl.filterVisibleControl.show()"><span>필터</span></button>
+            <!-- <button type="button" class="global-button-filter__active"><span>필터</span></button> -->
+        </div>
+        <!-- //필터버튼 -->
+
+    </div>
+    <!-- //검색결과 -->
+
+    <!-- 필터 -->
+    <div class="search-filter">
+        <!-- Navigation -->
+        <div class="navigation-filter">
+            <div class="navigation-filter-inner__left">
+                <button type="button" onclick="filterControl.filterVisibleControl.hide()"><i class="icon-ic_close"></i></button>
+            </div>
+            <strong class="navigation-filter-title">정렬 및 필터</strong>
+            <div class="navigation-inner__right">
+                <button type="button" class="navigation-button-text">
+                    초기화
+                </button>
+            </div>
+        </div>
+        <!-- //Navigation -->
+
+        <!-- Filter Content -->
+        <div class="filter-wrap">
+            <!-- 정렬기준 -->
+            <h2 class="filter-group-header">정렬</h2>
+            <div class="filter-group-field">
+                <button type="button" class="filter-align-price" onclick="actionSheet.show('.js-action-sheet-sort');">
+                    거리순
+                </button>
+            </div>
+
+            <!-- 투숙인원 -->
+            <h2 class="filter-group-header">
+                <span>투숙인원</span>
+                <button class="filter-group-header__button"
+                    onclick="toastPopup.show('일반적으로 유아 및 아동은 객실 인원에 포함 되므로 검색 시 유아 및 아동도 인원 수에 포함 해 주셔야 합니다.',true);">
+                    인원 설정 안내<i class="icon-ic_question"></i>
+                </button>
+            </h2>
+            <div class="filter-group-field">
+                <div class="filter-group-count">
+                    <span class="js-count-person">2명</span>
+                    <div>
+                        <button type="button" class="js-increment-person">
+                            <i class="icon-ic_add"></i>
+                        </button>
+                        <em>&nbsp;</em>
+                        <button type="button" class="js-decrement-person" disabled>
+                            <i class="icon-ic_remove"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 등급 -->
+            <h2 class="filter-group-header">등급</h2>
+            <div class="filter-group-field">
+                <button class="btn">특급호텔</button>
+                <button class="btn">일반호텔</button>
+                <button class="btn">리조트</button>
+                <button class="btn">펜션</button>
+                <!-- <button class="btn btn__active">특급 호텔</button> -->
+            </div>
+
+            <!-- 배드타입 -->
+            <h2 class="filter-group-header">배드타입</h2>
+            <div class="filter-group-field">
+                <button class="btn">싱글</button>
+                <button class="btn">더블</button>
+                <button class="btn">트윈</button>
+                <button class="btn">온돌방</button>
+            </div>
+
+            <!-- 부대시설 -->
+            <h2 class="filter-group-header">부대시설</h2>
+            <div class="filter-group-field">
+                <button class="btn">수영장</button>
+                <button class="btn">사우나</button>
+                <button class="btn">주차</button>
+                <button class="btn">장애인시설</button>
+            </div>
+
+            <!-- 가격정보 -->
+            <h2 class="filter-group-header">
+                <p>
+                    가격정보
+                    <span class="filter-header-info">
+                        <input type="text" class="js-range-price" readonly />
+                    </span>
+                </p>
+            </h2>
+            <div class="filter-group-field filter-group-field__range">
+                <div class="filter-range"></div>
+                <div class="filter-range-text"><span>0원</span><span>100만원</span></div>
+            </div>
+        </div>
+        <!-- //Filter Content -->
+
+        <!-- Float Button -->
+        <div class="button-wrap__full button-wrap__float">
+            <button type="button" class="btn btn-primary" disabled>
+                적용
+            </button>
+        </div>
+        <!-- //Float Button -->
+    </div>
+    <!-- //필터 -->
+
+    <!-- 액션시트 -->
+    <div class="action-sheet js-action-sheet-sort">
+        <div class="action-sheet-element">
+            <div class="action-sheet-title">
+                <strong>TITLE - 타이틀입니다.</strong>
+                <p>SubTitle - 서브타이틀 입니다 서브타이틀 입니다 서브타이틀 입니다 서브타이틀 입니다.</p>
+            </div>
+            <div class="action-sheet-content__list">
+                <ul>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">거리순</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">랭킹순</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">높은 가격순</span>
+                        </label>
+                    </li>
+                    <li>
+                        <label class="radio-item">
+                            <span class="radio-item-input">
+                                <input type="radio" class="radio-input" name="filter-sort" />
+                                <span class="radio-item-inner"></span>
+                            </span>
+                            <span class="radio-item-text">낮은 가격순</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="action-sheet-dim"></div>
+    </div>
+    <!-- //액션시트 -->
+
+    <!-- Script : Library -->
+    <script src="../../static/js/library/jquery-1.12.4.min.js"></script>
+    <script src="../../static/js/library/jquery-ui.min.js"></script>
+    <script src="../../static/js/library/swiper.min.js"></script>
+
+    <!-- Script : Components -->
+    <script src="../../static/js/service/components/navigation.js"></script>
+    <script src="../../static/js/service/components/popup-toast.js"></script>
+    <script src="../../static/js/service/components/modal.js"></script>
+    <script src="../../static/js/service/components/product.js"></script>
+    <script src="../../static/js/service/components/tab.js"></script>
+    <script src="../../static/js/service/components/spinner.js"></script>
+    <script src="../../static/js/service/components/action-sheet.js"></script>
+
+    <!-- Script : Pages -->
+    <script src="../../static/js/service/pages/filter.js"></script>
+    <script src="../../static/js/service/pages/keyword.js"></script>
+    <script src="../../static/js/service/pages/result.js"></script>
+    <script src="../../static/js/service/pages/home.js"></script>
+
+</body>
+
+</html>

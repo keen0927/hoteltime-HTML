@@ -9,6 +9,15 @@ $duration-title-fadeout: 0.18s;
 $duration-button-translateY: 0.1s;
 $duration-button-wrap-padding-left: 0.15s;
 
+.search-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    @include animateElementFadeEffectInit(0.4s);
+}
+
 .search-result-navigation {
     position: fixed;
     left: 0;

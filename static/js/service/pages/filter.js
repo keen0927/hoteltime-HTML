@@ -84,8 +84,24 @@ var filterControl = (function(){
         });
     }
 
+    // 필터 Visible 컨트롤
+    var filterVisibleControl = {
+        show: function() {
+            animateAdd('.search-filter');
+            animateRemove('.search-result');
+        },
+        hide: function() {
+            animateRemove('.search-filter');
+            animateAdd('.search-result');
+        },
+        reset: function() {
+            // 리셋
+        }
+    }
+
     return {
-        init: init
+        init: init,
+        filterVisibleControl: filterVisibleControl
     }
 })();
 

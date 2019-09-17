@@ -81,3 +81,10 @@
     font-size: $size;
     color: $color;
 }
+
+// 컨텐츠 fade 애니메이션 초기화
+@mixin animateElementFadeEffectInit ($duration) {
+    display: none;
+    opacity: 0;
+    transition: $duration;
+}

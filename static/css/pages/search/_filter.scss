@@ -5,6 +5,16 @@
  */
 
 // 네비게이션 - 필터
+.search-filter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 300;
+    background-color: #fff;
+    @include animateElementFadeEffectInit(0.4s);
+}
+
 .navigation-filter {
     display: flex;
     justify-content: space-between;
@@ -75,14 +85,11 @@
 }
 
 .filter-wrap {
-    padding-top: 73px; // 57 + 16;
-    padding-top: safe(constant, top, 73px);
-    padding-top: safe(env, top, 73px);
-
-    padding-bottom: 62px;
-    padding-top: safe(constant, bottom, 62px);
-    padding-top: safe(env, bottom, 62px);
+    padding: 73px 0 62px 0;
+    padding: safe(constant, top, 73px) 0 safe(constant, bottom, 62px);
+    padding: safe(env, top, 73px) 0 safe(env, bottom, 62px);
 }
+
 
 .filter-group-header {
     display: flex;
