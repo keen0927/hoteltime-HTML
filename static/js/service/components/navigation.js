@@ -1,10 +1,16 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-09-11
+ * @ Description: GNB
+ */
+
 var navigation = (function(){
 
     var elementNavigation = document.querySelector('.navigation'),
         elementVirtualDom = document.querySelector('.virtual-element'),
         blurPosition = 97;
 
-    // InitialState
+    // 초기화
     function init(type) {
         if (type === undefined) throw new TypeError('type을 지정해주세요 "dark" , "light"');
         if (typeof type !== 'string') throw new TypeError('type은 string입니다. "dark" , "light" 타입중 하나를 인자로 넣어주세요');

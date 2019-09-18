@@ -4,15 +4,16 @@
  * @ Description: 스피너JS
  */
 
-
 var spinnerControl = (function(){
 
-    var targetElement = document.querySelector('.spinner-ring-wrap');
+    var targetElement = $('.spinner-ring-wrap');
 
+    // 초기화
     var init = function() {
         makeHTML();
     }
 
+    // HTML 생성
     var makeHTML = function() {
         var spinnerHTML = '<div class="spinner-ring-wrap"><div class="spinner-ring"><div></div><div></div><div></div><div></div></div></div>';
 
@@ -20,11 +21,17 @@ var spinnerControl = (function(){
     }
 
     var show = function() {
-        animateAdd('.spinner-ring-wrap');
+        targetElement.addClass('display-block');
+        setTimeout(function(){
+            targetElement.addClass('opacity-1');
+        },100);
     }
 
     var hide = function() {
-        animateRemove('.spinner-ring-wrap');
+        targetElement.removeClass('opacity-1');
+        setTimeout(function(){
+            targetElement.removeClass('display-block');
+        },400);
     }
 
     return {
@@ -33,5 +40,3 @@ var spinnerControl = (function(){
         hide: hide
     }
 })();
-
-// spinnerControl.init();

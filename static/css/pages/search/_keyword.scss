@@ -10,9 +10,10 @@
     left: 0;
     right: 0;
     z-index: 20;
-    padding: 0 0 8px 0;
-    padding: safe(constant, top, 1px) 0 8px 0;
-    padding: safe(env, top, 1px) 0 8px 0;
+    padding-bottom: 8px;
+    padding-top: 0;
+    padding-top: safe(constant, top);
+    padding-top: safe(env, top);
     background: $color_bg_tertiary;
 }
 
@@ -102,7 +103,7 @@
 
 .search-home {
 
-    @include animateElementFadeEffectInit(0.4s);
+    @include animateElementFadeEffectInit(0.3s);
     display: block;
     visibility: hidden;
 
@@ -113,16 +114,16 @@
     .tab-wrap {
         position: fixed;
         z-index: 20;
-        top: 105px;
-        top: safe(constant, top, 105px);
-        top: safe(env, top, 105px);
+        top: 104px;
+        top: safe(constant, top, 104px);
+        top: safe(env, top, 104px);
     }
 }
 
 .keyword-swiper-wrap {
     opacity: 1;
     display: block;
-    transition: 0.4s;
+    transition: 0.3s;
 
     &.opacity-0 {
         opacity: 0;
@@ -138,6 +139,7 @@
     margin-top: 145px; // 105 + 40
     margin-top: safe(constant, top, 145px);
     margin-top: safe(env, top, 145px);
+    padding-bottom: 76px;
     // opacity: 0;
 
     // &.show {
@@ -205,8 +207,17 @@
         opacity: 1;
 
         &.js-item__fadeout {
-            transition: opacity 0.4s;
+            transition: opacity 0.3s;
             opacity: 0;
+        }
+
+        &.empty-area {
+            height: 40px;
+            padding: 40px 24px 0 24px;
+            line-height: 40px;
+            color: $color_text_dark_hint;
+            text-align: center;
+            @include font_title_1r;
         }
     }
 
@@ -284,15 +295,28 @@
         @include color_gradient_light;
     }
 
+    &:after {
+        content: '';
+        display: block;
+        padding-bottom: 20px;
+        background-color: $color_bg_primary;
+    }
+
+    &.gradient-box-focused {
+        &:after {
+            display: none;
+        }
+    }
+
     div {
         height: 40px;
         padding-right: 24px;
-        padding-bottom: 20px;
-        background: $color_bg_primary;
+        background-color: $color_bg_primary;
         box-sizing: content-box;
 
         ul {
             display: flex;
+            height: 40px;
             align-items: center;
             justify-content: flex-end;
 
@@ -328,7 +352,7 @@
     padding-bottom: safe(constant, bottom, 1px);
     padding-bottom: safe(env, bottom, 1px);
 
-    @include animateElementFadeEffectInit(0.4s);
+    @include animateElementFadeEffectInit(0.3s);
 
     ul {
         padding: 12px 0;

@@ -67,6 +67,22 @@ var filterControl = (function(){
         });
     }
 
+    // 필터 버튼 체크 아이콘 컨트롤
+    var filterButtonIcon = {
+        Add: function() {
+            $('.global-button-filter button').addClass('global-button-filter__active');
+        },
+        remove: function() {
+            $('.global-button-filter button').removeClass('global-button-filter__active');
+        }
+    }
+
+    // 필터 적용
+    var filterAdapt = function() {
+        filterButtonIcon.Add();
+        filterVisibleControl.hide();
+    }
+
     // 초기화
     var init = function() {
         handlePriceRange();
@@ -79,20 +95,42 @@ var filterControl = (function(){
     var handleCloseSortSheet = function() {
         $('input[name="filter-sort"]').each(function(){
             $(this).change(function(){
-                actionSheet.close('.js-action-sheet-sort');
+                $('.js-filter-align').text($(this).data('placeholder'));
+                setTimeout(function(){
+                    actionSheet.close('.js-action-sheet-sort');
+                },50);
             });
         });
     }
 
+    // 스크롤 위치 저장
+    var saveWindowScrollY = undefined;
+
     // 필터 Visible 컨트롤
     var filterVisibleControl = {
         show: function() {
-            animateAdd('.search-filter');
-            animateRemove('.search-result');
+            var detectWindowScrollY = window.scrollY;
+            saveWindowScrollY = detectWindowScrollY;
+            $('.search-result').removeClass('display-block');
+            setTimeout(function(){
+                $('.search-result').removeClass('opacity-1');
+            },200);
+            $('.search-filter').addClass('display-block');
+            windowScrollTop();
+            setTimeout(function(){
+                $('.search-filter').addClass('opacity-1');
+            },50);
         },
         hide: function() {
-            animateRemove('.search-filter');
-            animateAdd('.search-result');
+            $('.search-filter').removeClass('display-block');
+            setTimeout(function(){
+                $('.search-filter').removeClass('opacity-1');
+            },200);
+            $('.search-result').addClass('display-block');
+            window.scrollTo(0,saveWindowScrollY);
+            setTimeout(function(){
+                $('.search-result').addClass('opacity-1');
+            },100);
         },
         reset: function() {
             // 리셋
@@ -101,7 +139,8 @@ var filterControl = (function(){
 
     return {
         init: init,
-        filterVisibleControl: filterVisibleControl
+        filterVisibleControl: filterVisibleControl,
+        filterAdapt: filterAdapt
     }
 })();
 

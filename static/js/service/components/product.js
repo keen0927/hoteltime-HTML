@@ -7,18 +7,11 @@
 
 var productList = (function(){
 
-    var getWindowWidth = window.innerWidth;
-
     // Initialize
     function init() {
         productShow('.product-panorama-wrap');
         // toggleFavorite(); 찜기능 추후 고도화때 업데이트
     }
-
-    // Infinite Scroll용 Reset
-    // function reset() {
-    //     toggleFavorite();
-    // }
 
     function productShow(elementWrapClass) {
 
@@ -43,27 +36,6 @@ var productList = (function(){
     //             }
     //             this.classList.add(activeClass);
     //         });
-    //     }
-    // }
-
-    // 가격표 UI 컨트롤 - 가격 영역 내 자리가 부족하면 실시간 정보 미노출
-    // function productPriceAreaSet() {
-
-    //     var targetElements = document.querySelectorAll('.product-price-info__left'),
-    //         productWrapWidth = document.querySelector('.product-price-area').offsetWidth;
-
-    //     if (getWindowWidth <= 320) return; // 320px 이하 대응
-
-    //     for ( i = 0 ; i <= targetElements.length ; i++ ) {
-
-    //         if (targetElements[i] === undefined) return;
-
-    //         var nextElement = targetElements[i].nextElementSibling,
-    //             getWidthLeftElement = targetElements[i].offsetWidth,
-    //             getWidthRightElement = nextElement.offsetWidth,
-    //             calculateWidth = getWidthLeftElement + getWidthRightElement + 20;
-
-    //         if (calculateWidth >= productWrapWidth) nextElement.style.display = 'none';
     //     }
     // }
 

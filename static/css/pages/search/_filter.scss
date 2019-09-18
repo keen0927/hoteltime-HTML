@@ -12,7 +12,7 @@
     left: 0;
     z-index: 300;
     background-color: #fff;
-    @include animateElementFadeEffectInit(0.4s);
+    @include animateElementFadeEffectInit(0.3s);
 }
 
 .navigation-filter {
@@ -24,10 +24,10 @@
     right: 0;
     left: 0;
     z-index: 500;
-    min-width: 320px;
+    min-width: 310px;
     height: 56px;
     padding: 0 8px 0 10px;
-    padding-top: 0;
+    padding-top: 1px;
     padding-top: safe(constant, top);
     padding-top: safe(env, top);
     box-sizing: content-box;
@@ -127,7 +127,7 @@
 }
 
 @mixin filter-button {
-    margin-right: 8px;
+    margin: 0 8px 8px 0;
     padding: 0 16px;
     height: 36px;
     border-radius: 36px;
@@ -135,7 +135,12 @@
 
 .filter-group-field {
     display: flex;
+    flex-wrap: wrap;
     padding: 0 20px 24px 20px;
+
+    &.filter-group-field__button {
+        padding: 0 20px 16px 20px;
+    }
 
     .btn {
         background-color: $color_action_grey_primary;
@@ -146,8 +151,7 @@
 
     .btn__active {
         background-color: $color_action_blueb_primary;
-        // color: $color_text_dark_primary;
-        color: #fff;
+        color: $color_gold_secondary;
         @include font_filter_on;
         @include filter-button;
     }

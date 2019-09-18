@@ -66,7 +66,6 @@ var TabControl = function (element, option) {
         handleClick();
         insertInkBar();
         show();
-        console.log('11');
     };
 
     return {

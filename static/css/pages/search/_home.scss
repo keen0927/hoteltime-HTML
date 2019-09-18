@@ -1,0 +1,14 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-09-18
+ * @ Description: 검색홈 공통 스타일
+ */
+
+.search-home-container {
+    opacity: 0;
+    transition: 0.3s;
+
+    &.opacity-1 {
+        opacity: 1;
+    }
+}

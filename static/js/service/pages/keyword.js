@@ -100,21 +100,13 @@ var keywordControl = (function () {
 
     // Swiper 카드 높이 설정
     function swiperSetMinHeight() {
-        var documentHeight = window.innerHeight,
-            navHeight = document.querySelector('.search-navigation').offsetHeight,
-            keywordTabHeight = document.querySelector('.js-keyword-tab').offsetHeight,
-            gradientHeight = document.querySelector('.gradient-box').offsetHeight,
-            swiperHeight = $('.search-home-keyword').height(),
-            popularHeight = $('.swiper-popular-keyword').height(),
-            recentlyHeight = $('.swiper-recently-keyword').height(),
-            diffHeight = popularHeight >= recentlyHeight ? popularHeight : recentlyHeight,
-            totalHeight = navHeight + swiperHeight + keywordTabHeight,
-            calcHeight = documentHeight - (navHeight + keywordTabHeight + gradientHeight);
+        var popularHeight = $('.swiper-popular-keyword').height(),
+            recentlyHeight = $('.swiper-recently-keyword').height();
 
-        if (totalHeight > documentHeight) {
-            $('.js-keyword-swiper .swiper-slide').css('min-height', diffHeight + gradientHeight + 'px');
+        if (popularHeight >= recentlyHeight) {
+            $('.swiper-recently-keyword').css('min-height', popularHeight + 'px');
         } else {
-            $('.js-keyword-swiper .swiper-slide').css('min-height', calcHeight + 'px');
+            $('.swiper-popular-keyword').css('min-height', recentlyHeight + 'px');
         }
     }
 
@@ -175,12 +167,28 @@ var keywordControl = (function () {
         });
     }
 
+    var inputFocus = function(element, duration) {
+        var duration = duration || 400;
+        setTimeout(function(){
+            windowScrollTop();
+            $(element).focus();
+        },duration);
+    }
+
+    document.querySelector('.js-search-input').addEventListener('focus',function(){
+        document.querySelector('.gradient-box').classList.add('gradient-box-focused');
+    });
+    document.querySelector('.js-search-input').addEventListener('focusout',function(){
+        document.querySelector('.gradient-box').classList.remove('gradient-box-focused');
+    });
+
 
     // 초기화
     var init = (function () {
         handleFocusScroll('.js-search-input');
         inputAddResetButton('.js-search-input'); // 검색값 리셋 버튼 이벤트
         handleRemoveItem('.search-recently-keyword'); // 전체삭제 이벤트
+        inputFocus('.js-search-input',200);
     })();
 
     // 검색키워드 Visible 컨트롤
