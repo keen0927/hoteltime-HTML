@@ -6,12 +6,6 @@
 
 var searchResultControl = (function () {
 
-    // Initialize
-    var init = function () {
-        gnbScrollAnimate();
-        quickFilterButtonToggle();
-    }
-
     var isAddEvent = false;
 
     var gnbScrollAnimate = function () {
@@ -54,24 +48,61 @@ var searchResultControl = (function () {
         var targetElements = document.querySelector('.search-result-quickfilter-swiper');
 
         targetElements.addEventListener('click', function (e) {
-
+            console.log('1');
             var target = e.target;
 
             if (target && document.getElementsByTagName('button')) {
-
+                console.log('2');
                 if (target.classList.value === 'active') {
                     target.classList.remove('active');
+                    console.log('3');
                 } else {
                     target.classList.add('active');
+                    console.log('4');
                 }
             }
         });
     }
 
+    // 초기화 확인
+    var isInitialize = false;
+
+    // 검색결과 Visible 컨트롤
+    var resultVisibleControl = {
+        show: function() {
+            $('.search-home').hide();
+            animateAdd('.search-result');
+            animateRemove('.search-home');
+
+            if(isInitialize === false) {
+                init();
+                isInitialize = true;
+            }
+        },
+        hide: function() {
+            $('.search-result').removeClass('display-block');
+            windowScrollTop();
+
+            // animateRemove('.search-result');
+            setTimeout(function(){
+                animateAdd('.search-home');
+                $('.search-result').removeClass('opacity-1');
+            },0);
+        },
+        reset: function() {
+            // 리셋
+        }
+    }
+
+    // Initialize
+    var init = function () {
+        gnbScrollAnimate();
+        quickFilterButtonToggle();
+    }
+
     return {
-        init: init
+        init: init,
+        resultVisibleControl: resultVisibleControl
     }
 
 })();
-
-searchResultControl.init();

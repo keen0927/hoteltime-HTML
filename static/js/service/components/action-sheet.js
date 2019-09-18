@@ -12,14 +12,9 @@ var actionSheet = (function(){
             scrollUp: 100,
             dimAddEvent: 1000,
             fadeOut: 100,
-            remove: 300
-        }
-
-    // function hi() {
-    //     reset(element);
-    // }
-
-    // TODO: 액션시트 다시만들어야함..
+            remove: 300,
+            reset: 550,
+        };
 
     var show = function(element) {
 
@@ -27,83 +22,49 @@ var actionSheet = (function(){
 
         isAnimate = true;
 
-        var targetElement = document.querySelector(element);
-        var targetDim = document.querySelectorAll(element + ' .action-sheet-dim')[0];
-        var targetSheet = document.querySelectorAll(element + ' .action-sheet-element')[0];
-
-        document.body.classList.add('preventScrollY');
-        targetElement.classList.add('action-sheet__show');
-
-        var hi = function() {
-            reset(element);
-        }
-
-        targetDim.addEventListener('click',hi);
-
-        // targetDim.addEventListener('click',close());
-        // targetDim.addEventListener('touchstart',function(){
-        //     console.log('이벤트 주입');
-        //     reset(element);
-        // });
+        $('body').addClass('preventScrollY');
+        $(element).addClass('action-sheet__show');
 
         setTimeout(function(){
-            targetDim.classList.add('action-sheet-dim__fade-in');
+            $('.action-sheet-dim', $(element)).addClass('action-sheet-dim__fade-in');
         },duration.fadeIn);
 
         setTimeout(function(){
-            targetSheet.classList.add('action-sheet-element__scroll-up');
+            $('.action-sheet-element', $(element)).addClass('action-sheet-element__scroll-up');
         },duration.scrollUp);
 
-        // setTimeout(function(){
-        //     targetDim.addEventListener('touchstart',function(){
-        //         reset(element);
-        //     });
-        // },duration.dimAddEvent);
-
-        // setTimeout(function(){
-        //     isAnimate = false;
-        //     console.log('펄스 적용');
-        // },2000);
-    }
-
-    var close = function(element) {
-        reset(element);
-    }
-
-    var reset = function(element) {
-        var targetElement = document.querySelector(element);
-        var targetDim = document.querySelectorAll(element + ' .action-sheet-dim')[0];
-        var targetSheet = document.querySelectorAll(element + ' .action-sheet-element')[0];
-
-        // targetDim.removeEventListener('click',ddd,false);
-
-        var hi = function() {
-            reset(element);
-        }
-
-        targetDim.removeEventListener('click',hi);
-
-        targetSheet.classList.remove('action-sheet-element__scroll-up');
-        document.body.classList.remove('preventScrollY');
-
-        console.log('RESET');
-
-        // targetDim.removeEventListener('touchstart',function(){
-        //     console.log('이벤트 제거');
-        //     reset(element);
-        // });
-
-        setTimeout(function(){
-            targetDim.classList.remove('action-sheet-dim__fade-in');
-        },duration.fadeOut);
-
-        setTimeout(function(){
-            targetElement.classList.remove('action-sheet__show');
-        },duration.remove);
+        document.querySelector('.action-sheet-dim').addEventListener('click',function(){
+            close(element);
+        });
 
         setTimeout(function(){
             isAnimate = false;
-        },300);
+        },duration.reset);
+    }
+
+    var close = function(element) {
+
+        if ( isAnimate === true ) return;
+
+        isAnimate = true;
+
+        $('body').removeClass('preventScrollY');
+        setTimeout(function(){
+            $('.action-sheet-element', $(element)).removeClass('action-sheet-element__scroll-up');
+            $('.action-sheet-dim', $(element)).removeClass('action-sheet-dim__fade-in');
+        },0);
+
+        setTimeout(function(){
+            $(element).removeClass('action-sheet__show');
+        },duration.remove);
+
+        document.querySelector('.action-sheet-dim').removeEventListener('click',function(){
+            close(element);
+        });
+
+        setTimeout(function(){
+            isAnimate = false;
+        },duration.reset);
     }
 
     return {

@@ -1,3 +1,9 @@
+/**
+ * @ Author: Keen
+ * @ Create Time: 2019-08-19
+ * @ Description: 토스트 팝업
+ */
+
 // 토스트 팝업
 var toastPopup = (function(){
 

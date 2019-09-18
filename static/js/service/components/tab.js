@@ -4,7 +4,7 @@
  * @ Description: 탭 JS
  */
 
-var TabControl = function(element, option){
+var TabControl = function (element, option) {
 
     // 엘리먼트 지정
     var targetElement = document.querySelector(element);
@@ -16,7 +16,7 @@ var TabControl = function(element, option){
     // 옵션
     if (option) {
         // direction : (left와 center만 존재)
-        if(option.direction === "left" || option.direction === "center") {
+        if (option.direction === "left" || option.direction === "center") {
             direction = option.direction;
             targetElement.classList.add('tab-wrap__' + direction);
         } else {
@@ -25,15 +25,15 @@ var TabControl = function(element, option){
     }
 
     // 클릭 이벤트
-    var handleClick = function() {
+    var handleClick = function () {
         var tabItems = document.querySelectorAll(element + ' .tab-item');
         var tabItemsLength = tabItems.length;
 
-        for ( i = 0 ; i < tabItemsLength ; i++ ) {
-            var offsetX = Math.floor(tabItems[i].getBoundingClientRect().x) + 1;
+        for (i = 0; i < tabItemsLength; i++) {
+            var offsetX = tabItems[i].offsetLeft;
             itemOffsetX.push(offsetX);
 
-            tabItems[i].addEventListener('click',function(){
+            tabItems[i].addEventListener('click', function () {
                 var _thisOffsetX = Math.ceil(this.getBoundingClientRect().x);
                 var _thisWidth = this.offsetWidth - paddingHorizon;
 
@@ -46,11 +46,11 @@ var TabControl = function(element, option){
     }
 
     // 잉크바 HTML 생성
-    var insertInkBar = function() {
+    var insertInkBar = function () {
         var inkBarHTML = '<span class="tab-ink-bar"></span>';
         var inkBarWidthInit = document.querySelectorAll(element + ' .tab-item')[0].offsetWidth;
 
-        document.querySelector(element + ' .tab-inner').insertAdjacentHTML('beforeend',inkBarHTML);
+        document.querySelector(element + ' .tab-inner').insertAdjacentHTML('beforeend', inkBarHTML);
         elementInkBar = document.querySelector(element + ' .tab-ink-bar');
         elementInkBar.style.width = (inkBarWidthInit - paddingHorizon) + "px";
         elementInkBar.style.transform = 'translateX(' + itemOffsetX[0] + 'px)';
@@ -62,9 +62,13 @@ var TabControl = function(element, option){
     }
 
     // 초기화
-    var init = (function() {
+    var init = function () {
         handleClick();
         insertInkBar();
         show();
-    })();
+    };
+
+    return {
+        init: init()
+    }
 };

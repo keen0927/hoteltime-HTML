@@ -28,8 +28,10 @@
 @import './components/modal';
 @import './components/tab';
 @import './components/action-sheet';
+@import './components/spinner';
 
 // Page 검색
 @import './pages/search/filter';
 @import './pages/search/keyword';
 @import './pages/search/result';
+@import './pages/search/home';

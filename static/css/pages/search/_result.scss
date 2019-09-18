@@ -4,20 +4,42 @@
  * @ Description: 검색결과
  */
 
-$duration-navigation-height: 0.18s;
-$duration-title-fadeout: 0.18s;
-$duration-button-translateY: 0.1s;
-$duration-button-wrap-padding-left: 0.15s;
+// $duration-navigation-height: 0.18s;
+// $duration-title-fadeout: 0.18s;
+// $duration-button-translateY: 0.1s;
+// $duration-button-wrap-padding-left: 0.15s;
+
+// $duration-navigation-height: 0.05s;
+// $duration-title-fadeout: 0.1s;
+// $duration-button-translateY: 0.1s;
+// $duration-button-wrap-padding-left: 0.1s;
+
+$duration-navigation-height: 0.13s;
+$duration-title-fadeout: 0.13s;
+$duration-button-translateY: 0.05s;
+$duration-button-wrap-padding-left: 0.1s;
+
+.search-result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    @include animateElementFadeEffectInit(0.3s);
+}
 
 .search-result-navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 20;
+    z-index: 30;
     height: 139px;
     padding-top: 0;
-    padding-top: safe(constant, top, 1px);
-    padding-top: safe(env, top, 1px);
+    padding-top: safe(constant, top);
+    padding-top: safe(env, top);
     border-bottom: 1px solid $color_shadow_primary;
     background-color: #fff;
     transition: height $duration-navigation-height;
@@ -27,7 +49,7 @@ $duration-button-wrap-padding-left: 0.15s;
     // Navigation Animate Active
     &.search-result-navigation__active {
 
-        height: 91px;
+        height: 92px;
 
         .search-result-navigation-title {
             strong {
@@ -82,7 +104,7 @@ $duration-button-wrap-padding-left: 0.15s;
     justify-content: space-between;
     position: absolute;
     right: 0;
-    bottom: 44px;
+    bottom: 43px;
     left: 0;
     z-index: 30;
     height: 40px;
@@ -118,12 +140,17 @@ $duration-button-wrap-padding-left: 0.15s;
         }
 
         button:nth-of-type(2) {
+            position: relative;
             width: 40px;
             height: 40px;
             margin-left: auto;
             color: $color_action_blueb_tertiary;
 
             &:after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -10px 0 0 -10px;
                 @include icon-insert('\e916', $color_action_blueb_tertiary, 20px);
             }
 
@@ -149,10 +176,10 @@ $duration-button-wrap-padding-left: 0.15s;
 
 // GNB 퀵필터
 .search-result-quickfilter {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
     height: 36px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -190,12 +217,13 @@ $duration-button-wrap-padding-left: 0.15s;
         border-radius: 28px;
         border: 1px solid $color_action_outline;
         color: $color_text_dark_primary;
-        @include font_etc_1m;
+        box-sizing: border-box;
+        @include font_etc_1b;
 
         &.active {
             border: 1px solid $color_action_blueb_primary;
             background-color: $color_action_blueb_primary;
-            color: $color_gold_primary;
+            color: $color_gold_secondary;
         }
     }
 }
@@ -259,7 +287,9 @@ $duration-button-wrap-padding-left: 0.15s;
     top: safe(env, top, 141px);
     left: 0;
     right: 0;
+    z-index: 100;
     padding: 64px 40px 0 40px;
+    background-color: #fff;
     text-align: center;
 
     picture {

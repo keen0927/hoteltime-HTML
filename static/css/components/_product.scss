@@ -6,8 +6,9 @@
  */
 
 .product-panorama-wrap {
+    padding-top: 20px;
     opacity: 0;
-    transition: 0.4s;
+    transition: 0.3s;
 
     &.show {
         opacity: 1;
@@ -16,6 +17,11 @@
 
 .product-panorama {
     padding: 0 20px 20px;
+
+    a {
+        display: block;
+        color: $color_text_dark_primary;
+    }
 
     figure {
         position: relative;

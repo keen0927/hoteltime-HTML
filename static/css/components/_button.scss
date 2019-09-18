@@ -56,7 +56,7 @@
     padding-bottom: 20px;
     padding-bottom: safe(constant, bottom, 14px);
     padding-bottom: safe(env, bottom, 14px);
-    background: #fff;
+    background: transparent;
 
     button {
         @include button-shadow;
