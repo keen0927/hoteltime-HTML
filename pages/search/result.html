@@ -15,18 +15,23 @@
 <body>
 
     <!-- 검색결과 -->
-    <div class="search-result">
+    <div class="search-result display-block opacity-1">
 
         <!-- 검색결과 헤더 -->
         <div class="search-result-navigation">
-            <button type="button" class="search-result-navigation-close"><span>닫기</span></button>
+            <button type="button" class="search-result-navigation-close"
+                onclick="searchResultControl.resultVisibleControl.hide()">
+                <span>닫기</span>
+            </button>
             <div class="search-result-navigation-title">
                 <strong>검색 결과</strong>
             </div>
             <div class="search-result-navigation-button">
                 <div class="search-control-keyword">
-                    <button button="type">검색어</button>
-                    <button button="type"><span>RESET</span></button>
+                    <button button="type" onclick="searchResultControl.resultVisibleControl.hide()">검색어</button>
+                    <button button="type" onclick="searchResultControl.resultVisibleControl.hide()">
+                        <span>RESET</span>
+                    </button>
                 </div>
                 <div class="search-control-date">
                     <button button="type">02.14 - 02.15 (1박)</button>
@@ -40,7 +45,6 @@
                         <div><button type="button">호텔</button></div>
                         <div><button type="button">리조트</button></div>
                         <div><button type="button">부티크</button></div>
-                        <div><button type="button">펜션</button></div>
                     </div>
                 </div>
             </div>
@@ -50,36 +54,180 @@
         <!-- 검색결과 리스트 -->
         <div class="search-result-list">
 
-            <!-- Empty Area -->
-            <div class="search-empty-area">
-                <!-- <picture><img src="../../static/image/img_illu_network.png" alt=""></picture> -->
-                <picture><img src="../../static/image/img_illu_search.png" alt=""></picture>
-                <strong>조건에 맞는 숙소가 없습니다.</strong>
-                <small>필터조건을 재설정 해보세요.</small>
-                <button type="button">Action</button>
-            </div>
-            <!-- Empty Area -->
+            <!-- Empty Area : 네트워크 오류 이미지 파일명 img_illu_network.png
+                    <div class="search-empty-area">
+                        <picture><img src="../../static/image/img_illu_search.png" alt=""></picture>
+                        <strong>조건에 맞는 숙소가 없습니다.</strong>
+                        <small>필터조건을 재설정 해보세요.</small>
+                        <button type="button">다시 검색하기</button>
+                    </div>
+                    Empty Area -->
 
-            가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>
-            가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>
-            가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>
-            가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>
-            가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>
-            가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>가나다<br/>
+            <ul class="product-panorama-wrap show">
 
+                <li class="product-panorama">
+                    <a href="#none">
+                        <figure class="product-panorama-image">
+                            <button type="button" class="product-360">
+                                <span class="icon-img_360_badge"><span class="path1"></span><span
+                                        class="path2"></span></span>
+                            </button>
+                            <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                                alt="">
+                        </figure>
+
+                        <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재(텍스트 영역 컨트롤용) -->
+                        <div class="product-title-area product-is-favorite">
+                            <span class="product-badge-category__secondary">호텔</span>
+                            <p class="product-title">Product Title(제휴점명)</p>
+                            <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                            <!-- 찜 on 클래스 : product-favorite__active -->
+                            <!-- <button type="button" class="product-favorite product-favorite__active"><i class="icon-ic_nav_fav"></i></button> -->
+                        </div>
+
+                        <div class="product-price-area">
+                            <div>
+                                <span class="product-price-caption">할인사유</span>
+                                <span class="product-price-sale">000,000원</span>
+                                <span class="product-price-default">000,000</span>
+                                <span class="product-price-day">/박</span>
+                            </div>
+                            <div>
+                                <span class="product-realtime-info">실시간정보</span>
+                            </div>
+                        </div>
+
+                        <div class="product-additional-info">
+                            <div>
+                                Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
+                                표현
+                                가능
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="product-panorama">
+                    <a href="#none">
+                        <figure class="product-panorama-image">
+                            <button type="button" class="product-360">
+                                <span class="icon-img_360_badge"><span class="path1"></span><span
+                                        class="path2"></span></span>
+                            </button>
+                            <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                                alt="">
+                        </figure>
+
+                        <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                        <div class="product-title-area">
+                            <span class="product-badge-category__primary">호텔</span>
+                            <p class="product-title">Product Title(제휴점명)</p>
+                            <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                        </div>
+
+                        <div class="product-price-area">
+
+                            <div>
+                                <span class="product-price-soldout">SOLD OUT</span>
+                            </div>
+
+                        </div>
+
+                        <div class="product-additional-info">
+                            <div>
+                                Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
+                                표현
+                                가능
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="product-panorama">
+                    <a href="#none">
+                        <figure class="product-panorama-image">
+                            <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                                alt="">
+                        </figure>
+
+                        <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                        <div class="product-title-area">
+                            <span class="product-badge-category__primary">호텔</span>
+                            <p class="product-title">Product Title(제휴점명)</p>
+                            <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                        </div>
+
+                        <div class="product-price-area">
+                            <div>
+                                <span class="product-price-caption">할인사유</span>
+                                <span class="product-price-sale">000,000원</span>
+                                <span class="product-price-default">000,000</span>
+                                <span class="product-price-day">/박</span>
+                            </div>
+                            <div>
+                                <span class="product-realtime-info">실시간정보</span>
+                            </div>
+                        </div>
+
+                        <div class="product-additional-info">
+                            <div>
+                                Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
+                                표현
+                                가능
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class="product-panorama">
+                    <a href="#none">
+                        <figure class="product-panorama-image">
+                            <img src="https://image.goodchoice.kr/resize_1000X500x0/adimg_new/45388/6888/ee846076760d5268e34fb06caa25fc65.jpg"
+                                alt="">
+                        </figure>
+
+                        <!-- 찜버튼이 있으면 product-is-favorite 클래스 존재 -->
+                        <div class="product-title-area">
+                            <span class="product-badge-category__primary">호텔</span>
+                            <p class="product-title">Product Title(제휴점명)</p>
+                            <p class="product-info">Product Subtitle | 제휴점 위치 정보 or 상세주소 상세주소 상세주소 상세주소 상세주소</p>
+                        </div>
+
+                        <div class="product-price-area">
+                            <div>
+                                <span class="product-price-caption">할인사유</span>
+                                <span class="product-price-sale">000,000원</span>
+                                <span class="product-price-default">000,000</span>
+                                <span class="product-price-day">/박</span>
+                            </div>
+                            <div>
+                                <span class="product-realtime-info">실시간정보</span>
+                            </div>
+                        </div>
+
+                        <div class="product-additional-info">
+                            <div>
+                                Promotion or Event - 제휴점 부가 정보 영역보다 길면 단어 단위로 줄바꿈. 최대 2줄까지 표현 가능 표현 가능 표현 가능 표현 가능 표현 가능
+                                표현
+                                가능
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
         </div>
         <!-- //검색결과 리스트 -->
 
-    </div>
-    <!-- //검색홈 -->
+        <!-- 필터버튼 -->
+        <div class="global-button-filter">
+            <!-- 필터 적용시 클래스 "global-button-filter__active" 추가 -->
+            <button type="button" onclick="filterControl.filterVisibleControl.show()"><span>필터</span></button>
+            <!-- <button type="button" class="global-button-filter__active"><span>필터</span></button> -->
+        </div>
+        <!-- //필터버튼 -->
 
-    <!-- 필터버튼 -->
-    <div class="global-button-filter">
-        <!-- 필터 적용시 클래스 "global-button-filter__active" 추가 -->
-        <button type="button"><span>필터</span></button>
-        <!-- <button type="button" class="global-button-filter__active"><span>필터</span></button> -->
     </div>
-
+    <!-- //검색결과 -->
 
     <!-- Script -->
     <script src="../../static/js/library/jquery-1.12.4.min.js"></script>

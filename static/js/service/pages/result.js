@@ -48,17 +48,13 @@ var searchResultControl = (function () {
         var targetElements = document.querySelector('.search-result-quickfilter-swiper');
 
         targetElements.addEventListener('click', function (e) {
-            console.log('1');
             var target = e.target;
 
             if (target && document.getElementsByTagName('button')) {
-                console.log('2');
                 if (target.classList.value === 'active') {
                     target.classList.remove('active');
-                    console.log('3');
                 } else {
                     target.classList.add('active');
-                    console.log('4');
                 }
             }
         });
