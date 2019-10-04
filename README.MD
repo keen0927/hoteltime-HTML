@@ -1,41 +1,31 @@
-# 호텔타임 2.0 웹뷰 HTML 
+# 호텔타임 1.5 웹뷰 HTML
 
-### 문서
-[지라](https://confluence.abouthere.kr/pages/viewpage.action?pageId=726407182)
+## Directory Structure
++ components - 공통 컴포넌트 HTML
++ pages
+    + more - 더보기 HTML
+    + search - 검색 HTML
++ static
+    + css - 스타일
+    + icomoon - SVG 폰트 패밀리
+    + image - 기본 이미지
+    + js - 자바스크립트
+        + library
+        + service
 
-[제플린](zpl://project?pid=5d1d633794d7ed78bcacd6f8)
+## CDN
+#### 공통 CSS
+https://static.goodchoice.kr/ht-webview/css/all.css
 
-### CDN
-CSS : https://static.goodchoice.kr/ht-webview/css/all.css
+#### JS
 
-### vscode extension
+##### pages
+https://static.goodchoice.kr/ht-webview/js/service/pages/faq.js
+https://static.goodchoice.kr/ht-webview/js/service/pages/event-list.js
 
-- Live Sass Compiler
-- Live Server
-- auto-header
-
-### Auto Header Option - setting.json에 추가
-```js
-"autoHeader": {
-    "format": {
-        "startWith": "/**",
-        "middleWith": "*",
-        "endWith": "*/",
-        "headerPrefix": "@"
-    },
-    "header": {
-        "Author": "Your name",
-        "Create Time": {
-            "type": "createTime",
-            "format": "YYYY-MM-DD"
-        },
-        "Description": ""
-    }
-}
-```
-
-### 로컬개발 필수 설치 플러그인
-```bash
-npm i -g node-sass
-npm i -g live-server
-```
+#### components
+https://static.goodchoice.kr/ht-webview/js/service/components/action-sheet.js
+https://static.goodchoice.kr/ht-webview/js/service/components/modal.js
+https://static.goodchoice.kr/ht-webview/js/service/components/navigation.js
+https://static.goodchoice.kr/ht-webview/js/service/components/popup-toast.js
+https://static.goodchoice.kr/ht-webview/js/service/components/spinner.js
